@@ -27,7 +27,7 @@ public class Exercice1 {
         System.out.print("\nSaisir un nom : ");
         nom = scanner.nextLine();
 
-        System.out.println("Bonjour " + prenom + " " + nom + ".");
+        System.out.println("Bonjour " + prenom.substring(0,1).toUpperCase() + prenom.substring(1).toLowerCase() + " " + nom.toUpperCase() + ".");
 
     }
 }
