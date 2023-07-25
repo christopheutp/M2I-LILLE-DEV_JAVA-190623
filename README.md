@@ -8,6 +8,15 @@ dépôt M2I-LILLE-DEV_JAVA-190623
 - [demos](/java_base/src/demos/)
 - [exercices](/java_base/src/exercices/)
 
+## maven
+
+- [demos](/demo_maven/)
+
+## POO
+
+- [support](/support/java_poo_collections.pdf)
+- [demos](/demo_POO/src/main/java/org/example/base/)
+- [exercice](/demo_POO/src/main/java/org/example/exercices/)
 
 
 ## Liens utiles
