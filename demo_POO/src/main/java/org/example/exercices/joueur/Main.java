@@ -9,9 +9,10 @@ public class Main {
             warrior.effectuerUneQuete();
         }
 
+        String ancienPseudo = warrior.getNom();
         warrior.setNom("LeGigaBossDuJava");
 
-        System.out.println(warrior.getNom());
+        System.out.println("Le joueur "+ancienPseudo+" est renommé :"+warrior.getNom());
 
     }
 }
