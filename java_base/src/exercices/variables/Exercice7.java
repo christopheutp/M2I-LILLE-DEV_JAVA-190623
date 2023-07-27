@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exercice7 {
     public static void main(String[] args) {
-        /* slide 
+        /* slide 57
 
          */
         int longueur;

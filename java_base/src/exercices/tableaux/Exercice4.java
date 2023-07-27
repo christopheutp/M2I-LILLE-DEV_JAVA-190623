@@ -2,6 +2,7 @@ package exercices.tableaux;
 
 public class Exercice4 {
     public static void main(String[] args) {
+        // exercice slide 97
         int[] tableau1 = {1, 4, 2, 3};
         int[] tableau2 = {1, 4, 2};
         boolean isEqual = true;

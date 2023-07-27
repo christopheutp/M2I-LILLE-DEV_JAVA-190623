@@ -3,6 +3,7 @@ package exercices.boucles;
 public class Exercice4 {
 
     public static void main(String[] args) {
+        // exercice slide 81
         int annee = 2015;
         double population = 96_809;
 

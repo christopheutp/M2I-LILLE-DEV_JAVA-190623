@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Exercice2 {
     public static void main(String[] args) {
-
+// exercice slide 95
         int[] tableauSource = {-5, 3, 24, -12, -10, 5, 100, -2, -71, 0};
         int[] tableauDestination = new int[10];
         int compteur = 0;

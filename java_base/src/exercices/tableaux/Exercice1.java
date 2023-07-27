@@ -2,6 +2,7 @@ package exercices.tableaux;
 
 public class Exercice1 {
     public static void main(String[] args) {
+        // exercice slide 94
         int[] tableau = new int[100];
 
         for (int cpt = 0; cpt < 100; cpt++) {

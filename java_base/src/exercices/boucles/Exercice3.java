@@ -2,6 +2,7 @@ package exercices.boucles;
 
 public class Exercice3 {
     public static void main(String[] args) {
+        // exercice slide 80
         // Itère sur les tables
         for (int table = 1; table < 11; table++) {
             System.out.printf("Table %d\n", table);

@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Exercice2 {
     public static void main(String[] args) {
+        // exercice slide 69
         int nombre;
         Scanner scanner;
 

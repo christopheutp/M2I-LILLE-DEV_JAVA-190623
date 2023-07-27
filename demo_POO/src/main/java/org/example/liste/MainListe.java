@@ -1,11 +1,15 @@
 package org.example.liste;
 
+import org.example.heritage.Chat;
+
 import java.util.ArrayList;
 
 public class MainListe {
     public static void main(String[] args) {
         // ArrayList<type> <nom> = new ArrayList<type>();
         ArrayList<String> prenoms = new ArrayList<String>();
+
+
 
         // la méthode add() permet d'ajouter un élement à la liste
         prenoms.add("Sophie");

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exercice3 {
     public static void main(String[] args) {
-        /* slide 
+        /* slide 53
 
          */
         int a,b,sommeCarre;

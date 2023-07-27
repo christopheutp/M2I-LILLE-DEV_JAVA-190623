@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Exercice2 {
     public static void main(String[] args) {
+        // exercice slide 79
         int chapitre;
         int sousPartie;
         Scanner scanner;

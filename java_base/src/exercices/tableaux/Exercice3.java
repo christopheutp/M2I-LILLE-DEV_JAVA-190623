@@ -2,7 +2,7 @@ package exercices.tableaux;
 
 public class Exercice3 {
     public static void main(String[] args) {
-
+// exercice slide 96
         int[] tableau = {23, 150, 12, 28, 2900, 2};
         int max = 0;
         int indMax = 0;

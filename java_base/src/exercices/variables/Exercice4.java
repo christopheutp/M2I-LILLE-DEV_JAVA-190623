@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exercice4 {
     public static void main(String[] args) {
-        /* slide 
+        /* slide 54
 
          */
         int age;

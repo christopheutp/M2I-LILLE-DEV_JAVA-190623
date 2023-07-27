@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Exercice3 {
     public static void main(String[] args) {
+        // exercice slide 70
         int nombre1, nombre2, nombre3, max;
         Scanner scanner;
 

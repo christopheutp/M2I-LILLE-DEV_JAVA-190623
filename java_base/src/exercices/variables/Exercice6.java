@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exercice6 {
     public static void main(String[] args) {
-        /* slide 
+        /* slide 56
 
          */
         String chaineInitiale,chaineMinuscule,chaineMajuscule;

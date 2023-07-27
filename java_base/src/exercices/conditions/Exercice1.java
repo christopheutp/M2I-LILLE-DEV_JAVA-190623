@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercice1 {
 
     public static void main(String[] args) {
-
+        // exercice slide 68
         int age;
         Scanner scanner;
 
