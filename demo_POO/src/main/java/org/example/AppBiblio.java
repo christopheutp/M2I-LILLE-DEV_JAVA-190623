@@ -38,6 +38,13 @@ public class AppBiblio {
         biblio.removeLivre(livre3);
         biblio.afficheAll();
 
+        System.out.println("##################### Emprunt  du livre  avec Titre 5");
+
+        System.out.println(biblio.empruntLivreParTitre("toto"));
+        System.out.println(biblio.empruntLivreParTitre("Titre 5"));
+
+        biblio.afficheAll();
+
 
     }
 }

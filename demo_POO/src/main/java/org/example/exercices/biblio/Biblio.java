@@ -23,8 +23,11 @@ public class Biblio {
     }
 
     public void afficheAll(){
-        for (Livre l : livres){
-            System.out.println(l.toString());
+       // for (Livre l : livres){
+       //     System.out.println(l.toString());
+      //  }
+        for(int i=0; i < livres.size();i++){
+            System.out.println((i+1)+") "+livres.get(i).toString());
         }
     }
 
@@ -39,6 +42,16 @@ public class Biblio {
         if(livre.isEstEmprunte()){
             livre.changeStatus();
         }
+    }
+
+    public String empruntLivreParTitre(String titre){
+        for(int i=0; i < livres.size();i++){
+            if(livres.get(i).getTitre().equals(titre)){
+                livres.get(i).changeStatus();
+                return "Livre "+livres.get(i).getTitre()+ " emprunté";
+            }
+        }
+    return "Le livre "+titre+" n'est pas présent dans la biblio";
     }
 
 }
