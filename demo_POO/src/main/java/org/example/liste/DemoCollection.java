@@ -63,6 +63,12 @@ public class DemoCollection {
         hashMap.put("C++",30);
         System.out.println(" hashMap : "+hashMap);
 
+        String csharp ="C#";
+        int valueCSharp = 40;
+
+        hashMap.put(csharp,valueCSharp);
+        System.out.println(csharp.hashCode());
+
         // Méthodes pour le HashMap
         System.out.println("1. Taille du HasMap : " +hashMap.size());
         System.out.println("2. Valeur associé a la clé 'Java' : " +hashMap.get("Java"));
