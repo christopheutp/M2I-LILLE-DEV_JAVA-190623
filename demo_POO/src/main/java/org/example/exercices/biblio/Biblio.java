@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Biblio {
 
-    private ArrayList<Livre> livres;
-    // private List<Livre> livres;
+    //private ArrayList<Livre> livres;
+     private List<Livre> livres;
 
 
     public Biblio() {
