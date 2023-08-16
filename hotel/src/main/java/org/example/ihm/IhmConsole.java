@@ -1,5 +1,6 @@
 package org.example.ihm;
 
+import org.example.classes.Chambre;
 import org.example.classes.Hotel;
 
 import java.util.Scanner;
@@ -16,6 +17,10 @@ public class IhmConsole {
         String nomHotel = scanner.nextLine();
         hotel = new Hotel(nomHotel);
         System.out.println(hotel.getNom()+ " crée avec succés ! ");
+        System.out.println("Hôtel crée avec "+ hotel.getListeChambres().size() +" chambres ");
+        for (Chambre chambre : hotel.getListeChambres()) {
+            System.out.println(chambre);
+        }
         afficherMenu();
     }
 

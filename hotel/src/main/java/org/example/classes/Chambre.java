@@ -51,11 +51,11 @@ public class Chambre {
 
     @Override
     public String toString() {
-        return "Chambre{" +
+        return "Chambre : " +
                 "num=" + num +
                 ", statut=" + statut +
                 ", nbLits=" + nbLits +
                 ", tarif=" + tarif +
-                '}';
+                '.';
     }
 }
