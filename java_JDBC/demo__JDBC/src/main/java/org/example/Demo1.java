@@ -64,7 +64,8 @@ public class Demo1 {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(request);
             while(resultSet.next()){
-                System.out.println(resultSet.getInt("id")+ " , "+ resultSet.getString("first_name")+ " , "+ resultSet.getString("last_name"));
+                System.out.println(resultSet.getInt("id")+ " , "+ resultSet.getString("first_name")+
+                        " , "+ resultSet.getString("last_name"));
             }
 
 
