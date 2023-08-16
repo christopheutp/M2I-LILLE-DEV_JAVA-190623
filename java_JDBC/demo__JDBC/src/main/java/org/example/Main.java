@@ -11,7 +11,7 @@ public class Main {
         // test de connexion à la BDD
         String url = "jdbc:postgresql://localhost:5432/demo_jdbc";
         String user = "postgres";
-        String password = "Pa$$w0rd";
+        String password = "Pa$$w0rd555";
 
     try {
         Connection connection = DriverManager.getConnection(url,user,password);
