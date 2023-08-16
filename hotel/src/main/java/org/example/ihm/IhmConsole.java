@@ -1,8 +1,11 @@
 package org.example.ihm;
 
 import org.example.classes.Chambre;
+import org.example.classes.Client;
 import org.example.classes.Hotel;
+import org.example.classes.Reservation;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class IhmConsole {
@@ -79,40 +82,94 @@ public class IhmConsole {
 
     public static void ajoutClient(){
         System.out.println();
-        System.out.println("Ici je m'occupe de la methodologie pour ajouter un client");
+        System.out.println("=== Menu principal ===");
         System.out.println();
+        System.out.println("Quel est le nom du client :");
+        String nomClient = scanner.nextLine();
+        System.out.println("Quel est le prenom du client :");
+        String prenomClient = scanner.nextLine();
+        System.out.println("Quel est le telephone du client :");
+        String phoneClient = scanner.nextLine();
+        if(hotel.ajoutClientHotel(nomClient,prenomClient,phoneClient)){
+            System.out.println("Client ajouté avec succés");
+        }else{
+            System.out.println("erreur");
+        }
     }
 
     public static void afficherClients(){
         System.out.println();
-        System.out.println("Ici je m'occupe de la methodologie pour afficher les clients");
+        System.out.println("=== Afficher les clients ===");
         System.out.println();
+        for (Client client : hotel.getListeClients()) {
+            System.out.println(client);
+        }
 
     }
     public static void afficherReservationsClient(){
         System.out.println();
-        System.out.println("Ici je m'occupe de la methodologie pour afficher les reservations clients");
+        System.out.println("=== Afficher les Reservations d'un client ===");
         System.out.println();
+        System.out.println(" Quel client ? (taper le numéro)");
+        int idClient = scanner.nextInt();
+        for (Reservation reservation : hotel.getListReservationsParClient(idClient)) {
+            System.out.println(reservation);
+        }
 
     }
     public static void ajoutReservation(){
         System.out.println();
-        System.out.println("Ici je m'occupe de la methodologie pour ajouter une reservation");
+        System.out.println("=== Ajouter une reservation ===");
         System.out.println();
+        afficherClients();
+        System.out.println(" Pour quel client ? (taper le numéro)");
+        int idClient = scanner.nextInt();
+        System.out.println(" Combien de chambre ? ");
+        int nbChambre = scanner.nextInt();
+        int[] tabNumChambres = new int[nbChambre];
+        boolean dispoChambre= true;
+        for (int i = 0 ; i < tabNumChambres.length; i++){
+            int selectChambre;
+            do {
+                System.out.println("Taper le numéro d'une chambre disponible :");
+                selectChambre = scanner.nextInt();
+                dispoChambre = hotel.getListeChambres().get(selectChambre-1).isStatut();
+                System.out.println(dispoChambre);
+            }while(!dispoChambre);
+            tabNumChambres[i]= selectChambre;
+        }
+
+        Client client = hotel.getListeClients().get(idClient);
+        ArrayList<Chambre> chambres = new ArrayList<>();
+        for(int i = 0 ; i < tabNumChambres.length; i++){
+            chambres.add(hotel.getListeChambres().get(tabNumChambres[i]-1));
+            hotel.getListeChambres().get(tabNumChambres[i]-1).setStatut(false);
+        }
+        hotel.getListeReservations().add(new Reservation(chambres,client));
 
     }
 
     public static void annulerReservation(){
         System.out.println();
-        System.out.println("Ici je m'occupe de la methodologie pour annuler une reservation");
+        System.out.println("=== Annuler une reservation ===");
         System.out.println();
+        System.out.println("Quelle reservation annuler / terminer ? (taper le numero)");
+        int idReservation = scanner.nextInt();
+        hotel.getListeReservations().get(idReservation).setStatut(false);
+        for (Chambre chambre : hotel.getListeReservations().get(idReservation).getListeChambres()) {
+            chambre.setStatut(true);
+        }
 
     }
 
     public static void afficherReservations(){
         System.out.println();
-        System.out.println("Ici je m'occupe de la methodologie pour afficher toutes les reservations");
+        System.out.println("=== Afficher les Reservations ===");
         System.out.println();
+        for (Reservation reservation : hotel.getListeReservations()) {
+            System.out.println(reservation);
+        }
+
 
     }
 

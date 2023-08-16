@@ -67,4 +67,19 @@ public class Hotel {
         }
         return genListChambres;
     }
+
+    public boolean ajoutClientHotel(String nom,String prenom,String phone){
+       // Client client = new Client(nom,prenom,phone);
+        return listeClients.add(new Client(nom,prenom,phone));
+    }
+
+    public ArrayList<Reservation> getListReservationsParClient(int idClient){
+        ArrayList<Reservation> reservationsClient = new ArrayList<>();
+        for (Reservation reservation : listeReservations) {
+            if(reservation.getClient().getId() == idClient){
+                reservationsClient.add(reservation);
+            }
+        }
+        return  reservationsClient;
+    }
 }
