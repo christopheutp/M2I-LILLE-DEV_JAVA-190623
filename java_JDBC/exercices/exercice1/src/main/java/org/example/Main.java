@@ -19,6 +19,6 @@ public class Main {
            // date = new Date("01/01/2001");
             date = new Date();
         }
-        System.out.println(date);
+        System.out.println(new java.sql.Date(date.getTime()));
     }
 }
