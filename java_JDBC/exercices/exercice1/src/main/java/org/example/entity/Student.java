@@ -163,6 +163,26 @@ public class Student {
         return students;
     }
 
+    public static Student getById(int id) throws SQLException {
+        Student student = null;
+        request = "SELECT * FROM student where id = ?";
+        connection = DatabaseManager.getPostgreSQLConnection();
+        statement = connection.prepareStatement(request);
+        statement.setInt(1, id);
+        ResultSet resultSet = statement.executeQuery();
+        if (resultSet.next()){
+            student = new Student(resultSet.getInt("id"),resultSet.getString("first_name"),resultSet.getString("last_name"),resultSet.getDate("date_degree"),resultSet.getInt("class_number"));
+        }
+        if(connection != null){
+            try{
+                connection.close();
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
+        }
+        return student;
+    }
+
 
 
 
