@@ -1,19 +1,24 @@
 package org.example;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Entrée with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        // Press Maj+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Maj+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Merci de saisir la date  : ");
+        String dateString = scanner.nextLine();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = null;
+        try {
+            date = dateFormat.parse(dateString);
+        } catch (ParseException e) {
+           // date = new Date("01/01/2001");
+            date = new Date();
         }
+        System.out.println(date);
     }
 }
