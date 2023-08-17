@@ -11,3 +11,8 @@
     - Afficher la totalité des etudiants.
     - Afficher les etudiants d'une classes.
     - Supprimer un etudiant.
+
+
+### Etape 1
+
+- Cree la bdd avec le script.sql
