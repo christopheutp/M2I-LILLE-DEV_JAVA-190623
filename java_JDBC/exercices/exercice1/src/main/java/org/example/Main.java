@@ -28,6 +28,7 @@ public class Main {
         System.out.println(new java.sql.Date(date.getTime()));
 
          */
+        /*
         try {
             Connection connection = DatabaseManager.getPostgreSQLConnection();
             if(connection != null){
@@ -40,5 +41,7 @@ public class Main {
         }catch (SQLException e){
             throw new RuntimeException(e);
         }
+
+         */
     }
 }
