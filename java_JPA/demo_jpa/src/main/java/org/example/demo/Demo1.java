@@ -37,6 +37,19 @@ public class Demo1 {
 
     }
 
+    public static void main3(){
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        Person person = em.find(Person.class, 2L);
+        System.out.println(person.toString());
+        person.setNom("tutu");
+        System.out.println(person.toString());
+        em.getTransaction().commit();
+        em.close();
+        emf.close();
+
+    }
+
     public static void remove(){
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
