@@ -98,7 +98,7 @@ public class ToDoListAppConsole {
     }
 
     private static void markTaskAsCompleted(Scanner scanner){
-        System.out.println("Entrez l'ID de la tâche à supprimer : ");
+        System.out.println("Entrez l'ID de la tâche terminé : ");
         Long taskId  = scanner.nextLong();
         scanner.nextLine();
 

@@ -13,6 +13,7 @@ public class TaskDAOImpl implements TaskDAO {
     private EntityManagerFactory entityManagerFactory;
 
     public TaskDAOImpl(EntityManagerFactory entityManagerFactory) {
+
         this.entityManagerFactory = entityManagerFactory;
     }
 
