@@ -17,6 +17,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <class>org.example.entity.Person</class>
+        <class>org.example.entity.oneToMany.Employee</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->

@@ -40,5 +40,14 @@ public class Demo4 {
 
         em.getTransaction().commit();
 
+        Department departmentsearch =  em.find(Department.class,1);
+        System.out.println(departmentsearch.getDname());
+        for (Employee emp: departmentsearch.getEmps() ) {
+            System.out.println("employee avec id : "+emp.getId());
+        }
+
+        em.close();
+        emf.close();
+
     }
 }
