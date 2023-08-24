@@ -17,4 +17,32 @@ public class CalculatriceTest {
         //A => Assert
         Assertions.assertEquals(30, result);
     }
+
+    @Test
+    public void testDivisionAvecBDiff0() {
+        //A => Arrange
+        Calculatrice calculatrice = new Calculatrice();
+
+        //A => Act
+        double result = calculatrice.division(10,2);
+
+        //A => Assert
+        Assertions.assertEquals(5, result);
+
+    }
+
+
+    @Test
+    public void testDivisionAvecBEgale0() {
+        //A => Arrange
+        Calculatrice calculatrice = new Calculatrice();
+
+
+        //Assert
+
+        Assertions.assertThrowsExactly(RuntimeException.class, ()-> {
+            //A => Act
+            calculatrice.division(10,0);
+        });
+    }
 }
