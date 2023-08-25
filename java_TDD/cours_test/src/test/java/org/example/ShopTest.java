@@ -95,4 +95,18 @@ public class ShopTest {
         shop.update(product);
         Assertions.assertEquals(0, product.getQuality());
     }
+
+    @Test
+    void testUpdateShouldDecreaseQualityFourTimeWhenTypeIsLaitierAndSellInIs0() {
+        product = Product.builder().sellIn(0).quality(10).type("laitier").build();
+        shop.update(product);
+        Assertions.assertEquals(6, product.getQuality());
+    }
+
+    @Test
+    void testUpdateShouldDecreaseQualityThreeTimeWhenTypeIsLaitierAndSellInIs0AndQualityIs3() {
+        product = Product.builder().sellIn(0).quality(3).type("laitier").build();
+        shop.update(product);
+        Assertions.assertEquals(0, product.getQuality());
+    }
 }

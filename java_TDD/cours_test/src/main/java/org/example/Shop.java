@@ -5,6 +5,7 @@ import org.example.exception.NegativeQualityException;
 
 public class Shop {
     public void update(Product product){
+        int minusQuality = 0;
         if(product.getQuality() <= 0) {
             throw new NegativeQualityException();
         }
@@ -13,23 +14,36 @@ public class Shop {
         }
         if(product.getType() != null && product.getType().equals("laitier")) {
             if(product.getName() != null && product.getName().equals("brie vieilli")) {
-                product.setQuality(product.getQuality() + 1);
+               minusQuality = -1;
             }else {
-                product.setQuality(product.getQuality() - 2);
+                if(product.getSellIn() == 0) {
+                    if(product.getQuality()>3)
+                       minusQuality = 4;
+                    else
+                        minusQuality = product.getQuality();
+                }
+                else {
+                    if(product.getQuality() > 1)
+                        minusQuality = 2;
+                    else
+                        minusQuality = product.getQuality();
+                }
+
             }
         }
 
         else {
             if(product.getSellIn() <= 0) {
                 if(product.getQuality() == 1){
-                    product.setQuality(0);
+                    minusQuality = product.getQuality();
                 }else {
-                    product.setQuality(product.getQuality()-2);
+                    minusQuality = 2;
                 }
             }else {
-                product.setQuality(product.getQuality()-1);
+               minusQuality = 1;
             }
         }
+        product.setQuality(product.getQuality() - minusQuality);
         product.setSellIn(product.getSellIn()-1);
     }
 }
