@@ -11,7 +11,7 @@ A la fin de chaque journée le système utilise une méthode update qui décrém
 Voici les règles de décrémentation :
 -	Une fois la date de péremption est à zéro, la qualité se dégrade deux fois plus vite.
 -	La qualité d'un article n'est jamais négative.
--	La qualité d'un article n'est jamais supérieure à 50.
+-	La qualité d'un article n'est jamais supérieure à 50 (Il faut générer une exception MaxQualityException).
 -	La qualité du « brie vieilli » augmente à mesure qu'il vieillit.
 -	Les produits laitiers se dégradent en qualité deux fois plus vite que les produits normaux
 
