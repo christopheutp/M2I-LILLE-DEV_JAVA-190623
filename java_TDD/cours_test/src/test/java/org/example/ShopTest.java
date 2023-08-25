@@ -16,7 +16,7 @@ public class ShopTest {
     }
 
     @Test
-    void testUpdateDecreaseQuality() {
+    void testUpdateShouldDecreaseQuality() {
         //Arrange
         product = Product.builder().quality(10).sellIn(10).build();
 
@@ -29,7 +29,7 @@ public class ShopTest {
     }
 
     @Test
-    void testUpdateDecreaseSellIn() {
+    void testUpdateShouldDecreaseSellIn() {
         //Arrange
         product = Product.builder().quality(10).sellIn(10).build();
 
@@ -41,4 +41,11 @@ public class ShopTest {
 
     }
 
+
+    @Test
+    void testUpdateShouldDecreaseQualityTwiceWhenSellInIs0() {
+        product = Product.builder().sellIn(0).quality(10).build();
+        shop.update(product);
+        Assertions.assertEquals(8, product.getQuality());
+    }
 }
