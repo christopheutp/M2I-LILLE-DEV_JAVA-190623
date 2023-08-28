@@ -24,12 +24,15 @@ public class Demo2 {
         // le support utilise l'interface query au lieu de la classe générique query (l'interface est dépréciée)
         Query<Personne> personneQuery = session.createQuery("from Personne");
 
+        System.out.println("################ List");
         // avec la liste
         List<Personne> personnes = personneQuery.list();
         for (Personne p: personnes) {
             System.out.println(p.getNom());
         }
 
+
+        System.out.println("################ Iterator");
         // avec l'iterator
         Iterator<Personne> personneIterator = personneQuery.iterate();
         while(personneIterator.hasNext()){
@@ -37,6 +40,8 @@ public class Demo2 {
             System.out.println(p.getNom());
         }
 
+
+        System.out.println("################ Filtre toto");
         // Une requete avec filtre pour récupérer une liste
         Query<Personne> personneQuery1 = session.createQuery("from Personne where nom = 'toto' ");
         // Récupérer une liste avec les personnes dont le nom est toto
@@ -45,6 +50,7 @@ public class Demo2 {
             System.out.println(p.getNom());
         }
 
+        System.out.println("################ Filtre id = 2");
         //Une requete avec un filtre pour recuperer un seul element
         Query<Personne> personneQuery2 = session.createQuery("from Personne where id = 2");
         Personne p = personneQuery2.uniqueResult();
