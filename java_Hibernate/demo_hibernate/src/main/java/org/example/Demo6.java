@@ -8,6 +8,9 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.query.Query;
+
+import java.util.List;
 
 public class Demo6 {
     public static void main(String[] args) {
@@ -19,9 +22,9 @@ public class Demo6 {
 
         Transaction transaction = session.getTransaction();
         transaction.begin();
-
+/*
         // Création d'un entreprise
-      /*  Entreprise entreprise = new Entreprise();
+       Entreprise entreprise = new Entreprise();
         entreprise.setNom("utopios");
 
         session.save(entreprise);
@@ -45,7 +48,9 @@ public class Demo6 {
             if(e != null) {
                 System.out.println(e.getNom());
             }
-        }*/
+        }
+
+ */
 
         Entreprise entreprise = session.get(Entreprise.class,1);
 
@@ -58,6 +63,8 @@ public class Demo6 {
         session.update(entreprise);
 
         transaction.commit();
+
+
         //Fermeture de la session et la sessionfactory
         session.close();
         sessionFactory.close();

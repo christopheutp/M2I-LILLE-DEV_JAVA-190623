@@ -28,7 +28,7 @@ public class Demo4 {
         List<Personne> personnes = personneQuery.list();
 
         // parametres avec des positions
-        // il faut indiquer le numéro de paramentre en plus de ?
+        // il faut indiquer le numéro de parametre en plus de ?
         Query<Personne> personneQuery1 = session.createQuery("from Personne where nom like ?1");
         personneQuery1.setParameter(1,search+"%",StringType.INSTANCE);
         List<Personne> personnes1 = personneQuery1.list();
