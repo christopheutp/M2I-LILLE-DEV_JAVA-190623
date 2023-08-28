@@ -18,7 +18,7 @@ public class Demo1 {
         // Dés l'ouverture de la session, et en fonction de la propriété hibernate.hbm2ddl.auto hibernate va agir sur la base de donnée
 
         // Ajout d'une personne
-        /*
+
         session.getTransaction().begin();
         Personne pe = new Personne();
         pe.setNom("toto");
@@ -28,8 +28,8 @@ public class Demo1 {
 
         session.getTransaction().commit();
 
-         */
 
+/*
         // Récupérer une personne
         session.getTransaction().begin();
         Personne p = session.load(Personne.class,1L);
@@ -43,8 +43,8 @@ public class Demo1 {
 
         //On supprimme avec la methode delete
          session.delete(p);
-
-        session.getTransaction().commit();
+*/
+      //  session.getTransaction().commit();
         //Fermeture de la session et la sessionfactory
         session.close();
         sessionFactory.close();
