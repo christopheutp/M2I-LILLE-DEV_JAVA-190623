@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Multani&display=swap');
+
 section {
     height: 20rem;
 }
@@ -11,20 +13,68 @@ section > * {
 }
 
 .boite-rouge {
-    height: 400px;
-    width: 250px;
+    height: 250px;
+    width: 400px;
+    margin: auto;
     background-color: red;
     border-radius: 25px 50px 0 0;
-    border: black dotted 10px;
+    transition: all 200ms;
 }
 
 p {
-    height: 250px;
-    box-sizing: border-box;
+    /* height: 250px;
+    box-sizing: border-box; */
 
-    font-size: 1vw;
+    /* font-size: 1vw; */
     margin: 10px 25px 10px 0;
     padding: 25px 10px 5px 0;
     background-color: gray;
 
 }
+
+.mon-paragraphe {
+    font-weight: bolder;
+    font-size: 4rem;
+    font-family: 'Noto Sans Multani', sans-serif;
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: none;
+    text-align: justify;
+}
+
+#mon-bouton {
+    background-color: red;
+    color: white;
+    border: none;
+    font-size: 3rem;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+}
+
+#mon-bouton:is([disabled]),
+#mon-bouton[disabled] {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+#mon-bouton:not([disabled]):hover {
+    background-color: rgb(255, 57, 57);
+    cursor: pointer;
+}
+
+#mon-chien {
+    height: 500px;
+    width: 500px;
+    object-fit: contain;
+    filter: grayscale(1);
+    transition: all 200ms;
+}
+
+#mon-chien:hover, .boite-rouge:hover {
+    filter: none;
+    transform: rotate(180deg) translate(50px, 100px) scale(2, 1);
+    transform-origin: center;
+}
+
+
+
