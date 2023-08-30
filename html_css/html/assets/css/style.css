@@ -1,0 +1,30 @@
+section {
+    height: 20rem;
+}
+
+section > * {
+    display: block; /* inline | inline-block | block */
+    height: 2rem; /* Xpx | Xem, Xrem | X% | Xvh, Xvw */
+    width: 40%;
+
+    background-color: red; /* variable | rgb() | rgba() | hsl() | #RRGGBB | #RRGGBBAA */
+}
+
+.boite-rouge {
+    height: 400px;
+    width: 250px;
+    background-color: red;
+    border-radius: 25px 50px 0 0;
+    border: black dotted 10px;
+}
+
+p {
+    height: 250px;
+    box-sizing: border-box;
+
+    font-size: 1vw;
+    margin: 10px 25px 10px 0;
+    padding: 25px 10px 5px 0;
+    background-color: gray;
+
+}
