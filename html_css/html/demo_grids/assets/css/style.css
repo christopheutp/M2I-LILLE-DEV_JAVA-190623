@@ -1,0 +1,47 @@
+body, html {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: pink;
+}
+
+.grid-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    /* grid-template-rows: 200px 50px repeat(3, 1fr) 3fr;
+    grid-template-columns: 1fr 3fr; */
+    grid-template: 200px 50px repeat(3, 1fr) 3fr / 
+                    1fr 3fr;
+    grid-template-areas: "HEADER HEADER"
+                            "A B"
+                            "C D"
+                            "F F"
+                            "F F"
+                            "I J";
+    gap: 10px;
+}
+
+.box {
+    background-color: red;
+}
+
+.box:nth-child(6) {
+    grid-row: 6 / span 1;
+    grid-column: 1 / span 2;
+    align-self: stretch;
+    justify-self: stretch;
+}
+
+.box:nth-child(3) {
+    /* grid-column: 1 / span 2;
+    grid-row: 1; */
+    grid-area: HEADER;
+}
+
+.box:nth-child(5) {
+    grid-area: F;
+}
