@@ -1,0 +1,50 @@
+body, html {
+    margin: 0;
+}
+
+body {
+    background-color: pink;
+}
+
+.boite {
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+}
+
+.decalee {
+    position: relative;
+    background-color: green;
+    overflow: visible;
+    left: 200px;
+    top: 200px;
+}
+
+.pos-absolue {
+    position: absolute;
+    background-color: blue;
+    top: 500px;
+    left: 200px;
+}
+
+.petite-boite {
+    position: absolute;
+    background-color: red;
+    height: 20px;
+    width: 20px;
+    top: -10px;
+    left: 0;
+}
+
+.pos-fixed {
+    background-color: yellow;
+    position: fixed;
+    right: 0;
+    top: 25vh;
+}
+
+.pos-sticky {
+    position: sticky;
+    top: 20px;
+}
+
