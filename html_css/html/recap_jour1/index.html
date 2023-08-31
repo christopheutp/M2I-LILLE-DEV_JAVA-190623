@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <section>
+        <h1>Heading 1</h1>
+        <h2 class="classA">Heading 2</h2>
+        <h3 id="special-h3">Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5 class="classA">Heading 5</h5>
+        <h6>Heading 6</h6>
+    </section>
+    <hr>
+    <section>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique harum ex dolores impedit assumenda fugiat laboriosam, provident quasi iusto, <span>MON MOT</span> qui, magnam quia. Inventore placeat voluptatibus expedita. Corrupti, quidem voluptate.
+        Debitis reprehenderit, facere delectus porro soluta adipisci nemo <b>en gras</b>, est omnis vero optio magnam itaque suscipit temporibus consectetur. <strong>En gras parce que c'est important</strong> cum aspernatur quos quaerat voluptatum accusamus aut quas facere harum saepe?
+        Amet, voluptas quis exercitationem eaque quasi iste voluptatum deleniti corporis ab officia earum, <i>en italique</i> adipisci impedit explicabo quidem excepturi et dolore similique sed nostrum <em>en italique car ça a de l'importance</em> dignissimos neque quod culpa. Dignissimos.
+        Nemo quos aut dolor minima quibusdam, architecto cumque magnam eveniet molestiae sed quo unde! Eos doloremque tempora nemo aperiam quos fugiat ipsam provident molestiae ex saepe aliquam, labore excepturi nesciunt.
+        Velit provident laboriosam et nam necessitatibus blanditiis aut vitae reprehenderit voluptates molestias. Fugit aliquam culpa voluptatum praesentium ducimus voluptates magni, dolore omnis provident distinctio consequatur cupiditate vel aspernatur fugiat pariatur.</p>
+        <div>Une div</div>
+        <div>Une deuxieme div</div>
+    </section>
+    <hr>
+    <section>
+        <img src="https://img.freepik.com/free-photo/isolated-happy-smiling-dog-white-background-portrait-4_1562-693.jpg" alt="Dog">
+    </section>
+    <hr>
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nom</th>
+                    <th>Prix</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Pomme</td>
+                    <td>1.29</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Banane</td>
+                    <td>1.79</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Dentifrice</td>
+                    <td>3.89</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Total</td>
+                    <td>8.00</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+    <hr>
+    <section>
+        <ul>
+            <li>Item A</li>
+            <li>Item B</li>
+            <li>Item C</li>
+            <ul>
+                <li>Item E</li>
+                <li>Item F</li>
+            </ul>
+        </ul>
+        <ol>
+            <li>Item A</li>
+            <li>Item B</li>
+            <li>Item C</li>
+            <ol>
+                <li>Item E</li>
+                <li>Item F</li>
+            </ol>
+        </ol>
+    </section>
+    <hr>
+    <section>
+        <ul>
+            <li><a href="https://google.com">Google</a></li>
+            <li><a href="./autre_page.html">Autre page</a></li>
+        </ul>
+    </section>
+    <hr>
+    <section>
+        <form action="mailto:abc@example.com">
+            <fieldset>
+                <legend>Infos de base</legend>
+                <div>
+                    <label for="prenom">Prenom: </label>
+                <input type="text" id="prenom" name="prenom" required placeholder="Justin, Elliot, Marc-Aurèle">
+                </div>
+                <div>
+                    <label for="nomFamille">Nom de famille: </label>
+                <input type="text" id="nomFamille" name="nomFamille" required placeholder="DUPONT, SMITH, ...">
+                </div>
+                <div>
+                    <label for="mail">Email: </label>
+                <input type="email" id="mail" name="mail" required placeholder="abc@example.com">
+                </div>
+                <div>
+                    <label for="age">Age: </label>
+                <input type="number" id="age" name="age" required min="0" max="200" step="0.5" value="1">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Type de question</legend>
+                <div>
+                    <label for="questionType">Sujet: </label>
+                    <select required name="questionType" id="questionType">
+                        <option value="">Sélectionner un sujet...</option>
+                        <optgroup label="Compte">
+                            <option value="1">J'ai un problème de connexion</option>
+                            <option value="2">Je me suis fait hacker</option>
+                        </optgroup>
+                        <optgroup label="Paiement">
+                            <option value="3">Mon paiement n'est pas passé</option>
+                            <option value="4">J'aimerai payer par chèque</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <label for="languageKnown">Langues connues: </label>
+                    <select  multiple required size="6" name="languageKnown" id="languageKnown">
+                        <optgroup label="Europe">
+                            <option value="enUK">Anglais britanique</option>
+                            <option value="frFr">Français (France)</option>
+                        </optgroup>
+                        <optgroup label="Asie">
+                            <option value="krKR">Coréen</option>
+                            <option value="chMD">Mandarin</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Importance</legend>
+                <div>
+                    <input type="checkbox" name="isImportant" id="isImportant">
+                    <label for="isImportant">Est-ce important ?</label>
+                </div>
+                <div>
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="female" value="female">
+                </div>
+                <div>
+                    <label for="score">Score: </label>
+                    <input type="range" name="score" id="score" min="1" max="5" list="scores">
+                    <datalist id="scores">
+                        <option value="1" label="nul">Nul</option>
+                        <option value="2" label="mauvais">Mauvais</option>
+                        <option value="3" label="moyen">Moyen</option>
+                        <option value="4" label="bon">Bon</option>
+                        <option value="5" label="excellent">Excellent</option>
+                    </datalist>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Description du problème</legend>
+                <label for="description">Description: </label>
+                <textarea style="resize: none;" name="description" id="description" cols="80" rows="5"></textarea>
+            </fieldset>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+</body>
+</html>
