@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Bootstrap B</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main class="container">
+        <h1>Exercice B - Tableaux</h1>
+        <hr>
+        <h2 class="fw-light">Liste de Contacts</h2>
+        <hr>
+        <table class="table text-center align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Avatar</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Email</th>
+                    <th>Téléphone</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <img src="./assets/img/unknown_author.webp" alt="Unknown Contact" class="rounded-thumbnail">
+                    </td>
+                    <td>Lastname</td>
+                    <td>Firstname</td>
+                    <td>email@example.com</td>
+                    <td>+33 123 456 789</td>
+                    <td>
+                        <button class="btn btn-outline-info"><i class="bi bi-eye"></i> Details</button>
+                        <button class="btn btn-outline-warning mx-2"><i class="bi bi-pencil-square"></i> Edit</button>
+                        <button class="btn btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <img src="./assets/img/unknown_author.webp" alt="Unknown Contact" class="rounded-thumbnail">
+                    </td>
+                    <td>Lastname</td>
+                    <td>Firstname</td>
+                    <td>email@example.com</td>
+                    <td>+33 123 456 789</td>
+                    <td>
+                        <button class="btn btn-outline-info"><i class="bi bi-eye"></i> Details</button>
+                        <button class="btn btn-outline-warning mx-2"><i class="bi bi-pencil-square"></i> Edit</button>
+                        <button class="btn btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <img src="./assets/img/unknown_author.webp" alt="Unknown Contact" class="rounded-thumbnail">
+                    </td>
+                    <td>Lastname</td>
+                    <td>Firstname</td>
+                    <td>email@example.com</td>
+                    <td>+33 123 456 789</td>
+                    <td>
+                        <button class="btn btn-outline-info"><i class="bi bi-eye"></i> Details</button>
+                        <button class="btn btn-outline-warning mx-2"><i class="bi bi-pencil-square"></i> Edit</button>
+                        <button class="btn btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <img src="./assets/img/unknown_author.webp" alt="Unknown Contact" class="rounded-thumbnail">
+                    </td>
+                    <td>Lastname</td>
+                    <td>Firstname</td>
+                    <td>email@example.com</td>
+                    <td>+33 123 456 789</td>
+                    <td>
+                        <button class="btn btn-outline-info"><i class="bi bi-eye"></i> Details</button>
+                        <button class="btn btn-outline-warning mx-2"><i class="bi bi-pencil-square"></i> Edit</button>
+                        <button class="btn btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <img src="./assets/img/unknown_author.webp" alt="Unknown Contact" class="rounded-thumbnail">
+                    </td>
+                    <td>Lastname</td>
+                    <td>Firstname</td>
+                    <td>email@example.com</td>
+                    <td>+33 123 456 789</td>
+                    <td>
+                        <button class="btn btn-outline-info"><i class="bi bi-eye"></i> Details</button>
+                        <button class="btn btn-outline-warning mx-2"><i class="bi bi-pencil-square"></i> Edit</button>
+                        <button class="btn btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <!-- <div class="text-end">
+            <button class="btn btn-outline-success"><i class="bi bi-plus-circle"></i> Add a Contact</button>
+        </div> -->
+        <button class="btn btn-outline-success d-block ms-auto"><i class="bi bi-plus-circle"></i> Add a Contact</button>
+        <hr>
+        <h2 class="fw-light">Liste d'Auteurs</h2>
+        <hr>
+        <table class="table table-dark table-striped text-center align-middle rounded overflow-hidden">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Avatar</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Ouvrages</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <img src="./assets/img/unknown_author.webp" alt="Unkown" class="rounded-thumbnail">
+                    </td>
+                    <td>Lastname</td>
+                    <td>Firstname</td>
+                    <td class="text-start">
+                        <ul>
+                            <li>Book n°01</li>
+                            <li>Book n°02</li>
+                            <li>Book n°03</li>
+                            <li>Book n°04</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <!-- button.btn.btn-outline-info>(i.bi.bi-eye+{ Details}) -->
+                        <button class="btn btn-outline-info"><i class="bi bi-eye"></i> Details</button>
+                        <button class="btn btn-outline-secondary mx-2"><i class="bi bi-gear"></i> Edit</button>
+                        <button class="btn btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <img src="./assets/img/unknown_author.webp" alt="Unkown" class="rounded-thumbnail">
+                    </td>
+                    <td>Lastname</td>
+                    <td>Firstname</td>
+                    <td>
+                        <ul class="w-75 mx-auto">
+                            <li>Book n°01</li>
+                            <li>Book n°02</li>
+                            <li>Book n°03</li>
+                            <li>Book n°04</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <!-- button.btn.btn-outline-info>(i.bi.bi-eye+{ Details}) -->
+                        <button class="btn btn-outline-info"><i class="bi bi-eye"></i> Details</button>
+                        <button class="btn btn-outline-secondary mx-2"><i class="bi bi-gear"></i> Edit</button>
+                        <button class="btn btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <img src="./assets/img/unknown_author.webp" alt="Unkown" class="rounded-thumbnail">
+                    </td>
+                    <td>Lastname</td>
+                    <td>Firstname</td>
+                    <td class="text-start">
+                        <ul>
+                            <li>Book n°01</li>
+                            <li>Book n°02</li>
+                            <li>Book n°03</li>
+                            <li>Book n°04</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <!-- button.btn.btn-outline-info>(i.bi.bi-eye+{ Details}) -->
+                        <button class="btn btn-outline-info"><i class="bi bi-eye"></i> Details</button>
+                        <button class="btn btn-outline-secondary mx-2"><i class="bi bi-gear"></i> Edit</button>
+                        <button class="btn btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <img src="./assets/img/unknown_author.webp" alt="Unkown" class="rounded-thumbnail">
+                    </td>
+                    <td>Lastname</td>
+                    <td>Firstname</td>
+                    <td>
+                        <ul class="w-75 mx-auto">
+                            <li>Book n°01</li>
+                            <li>Book n°02</li>
+                            <li>Book n°03</li>
+                            <li>Book n°04</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <!-- button.btn.btn-outline-info>(i.bi.bi-eye+{ Details}) -->
+                        <button class="btn btn-outline-info"><i class="bi bi-eye"></i> Details</button>
+                        <button class="btn btn-outline-secondary mx-2"><i class="bi bi-gear"></i> Edit</button>
+                        <button class="btn btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <img src="./assets/img/unknown_author.webp" alt="Unkown" class="rounded-thumbnail">
+                    </td>
+                    <td>Lastname</td>
+                    <td>Firstname</td>
+                    <td class="text-start">
+                        <ul>
+                            <li>Book n°01</li>
+                            <li>Book n°02</li>
+                            <li>Book n°03</li>
+                            <li>Book n°04</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <!-- button.btn.btn-outline-info>(i.bi.bi-eye+{ Details}) -->
+                        <button class="btn btn-outline-info"><i class="bi bi-eye"></i> Details</button>
+                        <button class="btn btn-outline-secondary mx-2"><i class="bi bi-gear"></i> Edit</button>
+                        <button class="btn btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <img src="./assets/img/unknown_author.webp" alt="Unkown" class="rounded-thumbnail">
+                    </td>
+                    <td>Lastname</td>
+                    <td>Firstname</td>
+                    <td>
+                        <ul class="w-75 mx-auto">
+                            <li>Book n°01</li>
+                            <li>Book n°02</li>
+                            <li>Book n°03</li>
+                            <li>Book n°04</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <!-- button.btn.btn-outline-info>(i.bi.bi-eye+{ Details}) -->
+                        <button class="btn btn-outline-info"><i class="bi bi-eye"></i> Details</button>
+                        <button class="btn btn-outline-secondary mx-2"><i class="bi bi-gear"></i> Edit</button>
+                        <button class="btn btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <button class="btn btn-outline-success d-block ms-auto"><i class="bi bi-plus-circle"></i> Add an Author</button>
+    </main>
+</body>
+</html>
