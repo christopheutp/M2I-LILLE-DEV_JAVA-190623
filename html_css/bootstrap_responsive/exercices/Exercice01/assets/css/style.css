@@ -1,0 +1,15 @@
+.alternate-color > div:nth-child(4n+1) > div {
+    background-color: red;
+}
+
+.alternate-color > div:nth-child(4n+2) > div {
+    background-color: blue;
+}
+
+.alternate-color > div:nth-child(4n+3) > div {
+    background-color: green;
+}
+
+.alternate-color > div:nth-child(4n) > div {
+    background-color: gray;
+}
