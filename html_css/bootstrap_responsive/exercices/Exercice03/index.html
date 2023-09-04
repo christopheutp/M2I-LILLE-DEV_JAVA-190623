@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Bootstrap C</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main class="container">
+        <h1>Exercice C - Forms A</h1>
+        <hr>
+        <div class="row my-3">
+            <div class="col-6 offset-3 bg-dark rounded text-light p-3">
+                <h2 class="fw-light">- Inscription -</h2>
+                <hr class="text-warning">
+                <form>
+                    <div class="mb-3 row">
+                        <div class="col-4">
+                            <label for="firstname">Firstname:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" class="form-control" name="firstname" id="firstname">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-4">
+                            <label for="lastname">Lastname:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" class="form-control" name="lastname" id="lastname">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-4">
+                            <label for="email">Email:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="email" class="form-control" name="email" id="email">
+                        </div>
+                    </div>
+                    <div class="mb-3 d-flex align-items-center">
+                            <label for="password" class="w-25">Password:</label>
+                            <input type="password" class="form-control w-75" name="password" id="password">
+                    </div>
+                    <div class="mb-3 d-flex align-items-center">
+                        <label for="confPassword" class="w-25">Confirm:</label>
+                        <input type="password" class="form-control w-75" name="confPassword" id="confPassword">
+                    </div>
+                    <hr class="text-warning">
+                    <button class="btn btn-outline-light d-block ms-auto"><i class="bi bi-send"></i> Send</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
