@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Bootstrap D</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main class="container">
+        <h1>Exercice D - Forms B</h1>
+        <hr>
+        <div class="row my-3">
+            <div class="col-8 offset-2 bg-dark text-light rounded p-3">
+                <h2 class="fw-light">- Ajouter un livre -</h2>
+                <hr>
+                <form action="mailto:example@email.com" class="row">
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Titre: </label>
+                            <input type="text" class="form-control" name="title" id="title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="author" class="form-label">Auteur: </label>
+                            <select name="author" id="author" class="form-select">
+                                <!-- option[value=""]{Sélectionner une option}+option[value="$"]{Auteur n°$}*5 -->
+                                <option value="">Sélectionner une option</option>
+                                <option value="1">Auteur n°1</option>
+                                <option value="2">Auteur n°2</option>
+                                <option value="3">Auteur n°3</option>
+                                <option value="4">Auteur n°4</option>
+                                <option value="5">Auteur n°5</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="coverPicture" class="form-label">Couverture: </label>
+                            <input type="file" class="form-control" name="coverPicture" id="coverPicture" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="score" class="form-label">Score: </label>
+                            <input type="range" min="1" max="5" value="3" class="form-range" name="score" id="score" required>
+                            <div class="row text-center">
+                                <div class="col text-start">Nul</div>
+                                <div class="col">Mauvais</div>
+                                <div class="col">Moyen</div>
+                                <div class="col">Bon</div>
+                                <div class="col text-end">Bestseller</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="isbn" class="form-label">ISBN: </label>
+                            <input type="text" class="form-control" name="isbn" id="isbn" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="genre" class="form-label">Genre: </label>
+                            <select multiple size="5" name="genre" id="genre" class="form-select">
+                                <option value="1">Genre n°1</option>
+                                <option value="2">Genre n°2</option>
+                                <option value="3">Genre n°3</option>
+                                <option value="4">Genre n°4</option>
+                                <option value="5">Genre n°5</option>
+                                <option value="6">Genre n°6</option>
+                                <option value="7">Genre n°7</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Prix: </label>
+                            <input type="number" value="0" min="0" step="0.01" class="form-control" name="price" id="price" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="language" class="form-label">Langue: </label>
+                            <select name="language" id="language" class="form-select">
+                                <!-- option[value=""]{Sélectionner une option}+option[value="$"]{Auteur n°$}*5 -->
+                                <option value="">Sélectionner une option</option>
+                                <option value="1">Langue n°1</option>
+                                <option value="2">Langue n°2</option>
+                                <option value="3">Langue n°3</option>
+                                <option value="4">Langue n°4</option>
+                                <option value="5">Langue n°5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label for="description" class="form-label">Description: </label>
+                        <textarea name="description" id="description" cols="30" rows="5" class="form-control" style="resize: none;"></textarea>
+                        <hr>
+                        <button class="btn btn-outline-light d-block ms-auto"><i class="bi bi-plus-circle"></i> Ajouter</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
