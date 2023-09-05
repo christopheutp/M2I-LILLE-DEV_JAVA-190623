@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Bootstrap E</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main class="container">
+        <h1>Exercice E - Forms C</h1>
+        <hr>
+        <div class="row my-3">
+            <div class="col-6 offset-3 text-bg-dark rounded p-3">
+                <form action="mailto:example@mail.com">
+                    <label for="mailName" class="form-label">Email: </label>
+                    <div class="mb-3 input-group">
+                        <input type="text" class="form-control w-50" name="mailName" id="mailName">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control w-25" name="mailHost">
+                        <select name="mailExt" id="mailExt" class="form-select">
+                            <option value="fr">.fr</option>
+                            <option value="net">.net</option>
+                            <option value="com">.com</option>
+                        </select>
+                    </div>
+                    <label for="password" class="form-label">Password:</label>
+                    <div class="mb-3 input-group">
+                        <i class="bi bi-incognito input-group-text"></i>
+                        <input type="password" name="password" id="password" class="form-control">
+                    </div>
+                    <div class="mb-3 form-check-reverse">
+                        <label for="rememberMe" class="form-check-label">Remember me?</label>
+                        <input type="checkbox" name="rememberMe" id="rememberMe" class="form-check-input">
+                    </div>
+                    <hr>
+                    <div class="text-end">
+                        <button class="btn btn-outline-light"><i class="bi bi-send"></i> Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
