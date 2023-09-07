@@ -29,7 +29,7 @@ public class MultiRoutesServlet extends HttpServlet {
         String pathInfo = (req.getPathInfo() != null && !req.getPathInfo().isEmpty()) ? req.getPathInfo() : "";
         String found = "";
 
-        if(pathInfo != null) {
+        if(pathInfo != null && !pathInfo.isEmpty()) {
             found = prenoms.get(Integer.parseInt(pathInfo.substring(1)));
         }
 
