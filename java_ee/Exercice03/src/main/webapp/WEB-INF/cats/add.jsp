@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.example.exercice03.models.Cat" %><%--
   Created by IntelliJ IDEA.
   User: Administrateur
   Date: 07/09/2023
@@ -11,6 +11,7 @@
 <jsp:useBean id="dateOfBirth" type="java.lang.String" scope="request" />
 <jsp:useBean id="confirmation" type="java.lang.Boolean" scope="request" />
 <jsp:useBean id="errors" type="java.util.List<java.lang.String>" scope="request" />
+<jsp:useBean id="cats" type="java.util.ArrayList<com.example.exercice03.models.Cat>" scope="request" />
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -54,6 +55,14 @@
                             <li class="text-danger"><%= err %></li>
                         <% } %>
                     </ul>
+                <% } %>
+                <hr>
+                <% if (!cats.isEmpty()) { %>
+                <ul>
+                    <% for(Cat cat : cats) { %>
+                    <li><%= cat.getName() %></li>
+                    <% } %>
+                </ul>
                 <% } %>
             </div>
         </div>

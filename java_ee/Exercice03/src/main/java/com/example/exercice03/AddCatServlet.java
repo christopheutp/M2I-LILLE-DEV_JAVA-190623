@@ -31,6 +31,7 @@ public class AddCatServlet extends HttpServlet {
         req.setAttribute("dateOfBirth", LocalDate.now().toString());
         req.setAttribute("errors", errors);
         req.setAttribute("confirmation", false);
+        req.setAttribute("cats", cats);
 
         getServletContext().getRequestDispatcher("/WEB-INF/cats/add.jsp").forward(req, resp);
     }
@@ -42,12 +43,13 @@ public class AddCatServlet extends HttpServlet {
         String breed = req.getParameter("breed");
         String favMeal = req.getParameter("favMeal");
         LocalDate dateOfBirth = LocalDate.parse(req.getParameter("dateOfBirth"));
+        req.setAttribute("confirmation", false);
 
         if (favMeal.toUpperCase().equals("MILK")) {
             errors.add("Cats don't drink milk!");
-            req.setAttribute("confirmation", false);
         } else {
             Cat newCat = new Cat(name, breed, favMeal, dateOfBirth);
+            cats.add(newCat);
             req.setAttribute("confirmation", true);
             System.out.println(newCat);
         }
@@ -57,6 +59,7 @@ public class AddCatServlet extends HttpServlet {
         req.setAttribute("favMeal", favMeal);
         req.setAttribute("dateOfBirth", dateOfBirth.toString());
         req.setAttribute("errors", errors);
+        req.setAttribute("cats", cats);
 
         getServletContext().getRequestDispatcher("/WEB-INF/cats/add.jsp").forward(req, resp);
     }
