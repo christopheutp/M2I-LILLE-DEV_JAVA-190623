@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dog Details</title>
+    <span th:replace="~{dogs/list :: bootstrapImports}"></span>
+</head>
+<body>
+<main class="container">
+    <div class="row my-3">
+        <div class="col-8 offset-2 rounded text-bg-dark p-3">
+            <h1 class="fw-light">- Dog Details -</h1>
+            <hr>
+            <form th:object="${dog}">
+                <input type="text" name="id" th:field="*{id}" class="d-none" readonly>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" th:field="*{name}" th:readonly="${mode.equals('details')}">
+                </div>
+                <div class="mb-3">
+                    <label for="breed" class="form-label">Breed:</label>
+                    <input type="text" class="form-control" id="breed" th:field="*{breed}" th:readonly="${mode.equals('details')}">
+                </div>
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age:</label>
+                    <input type="text" class="form-control" id="age" th:field="*{age}" th:readonly="${mode.equals('details')}">
+                </div>
+                <a class="btn btn-outline-info" th:href="@{/dogs/list}"><i class="bi bi-arrow-counterclockwise"></i> Return to List</a>
+            </form>
+        </div>
+    </div>
+</main>
+</body>
+</html>
