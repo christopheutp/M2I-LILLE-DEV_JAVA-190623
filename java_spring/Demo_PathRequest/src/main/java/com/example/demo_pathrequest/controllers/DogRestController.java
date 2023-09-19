@@ -1,5 +1,6 @@
 package com.example.demo_pathrequest.controllers;
 
+import com.example.demo_pathrequest.exceptions.ResourceNotFoundException;
 import com.example.demo_pathrequest.models.DogDTO;
 import com.example.demo_pathrequest.services.DogService;
 import com.example.demo_pathrequest.services.PersonService;
@@ -32,7 +33,8 @@ public class DogRestController {
         if (found != null) {
             return ResponseEntity.ok(found);
         } else {
-            return new ResponseEntity<DogDTO>(HttpStatus.NOT_FOUND);
+            // return new ResponseEntity<DogDTO>(HttpStatus.NOT_FOUND);
+            throw new ResourceNotFoundException();
         }
     }
 }
