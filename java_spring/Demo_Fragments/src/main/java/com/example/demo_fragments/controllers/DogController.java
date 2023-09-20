@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -25,6 +24,8 @@ public class DogController {
     @GetMapping
     public String listDogs(Model model, @RequestParam(value = "name", defaultValue = "") String filterByName) {
         List<DogDTO> dogs = dogService.getDogs();
+
+        log.debug("GET to /dogs/list");
 
         if (!filterByName.isEmpty() && !filterByName.isBlank()) {
             dogs = dogs.stream().filter(d -> d.getName().startsWith(filterByName)).toList();
@@ -62,6 +63,13 @@ public class DogController {
     @PostMapping("/add")
     public String addDogHandler(DogDTO newDog) {
         dogService.addDog(newDog);
+
+        return "redirect:/dogs";
+    }
+
+    @PostMapping("/delete/{dogId}")
+    public String deleteDogById(@PathVariable("dogId") UUID id) {
+        // Réaliser la suppression
 
         return "redirect:/dogs";
     }
