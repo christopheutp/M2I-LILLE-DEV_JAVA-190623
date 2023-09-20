@@ -4,6 +4,7 @@ import com.example.demo_fragments.exceptions.ResourceNotFound;
 import com.example.demo_fragments.models.DogDTO;
 import com.example.demo_fragments.services.DogService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,7 @@ import java.util.UUID;
 @Controller
 @RequestMapping("/dogs")
 @RequiredArgsConstructor
+@Slf4j
 public class DogController {
 
     private final DogService dogService;
@@ -49,7 +51,7 @@ public class DogController {
 
     @GetMapping("/add")
     public String getDogForm(Model model, @RequestParam(value = "exemple", defaultValue = "default") String blabla) {
-        System.out.println("blabla: " + blabla);
+        log.debug("blabla: " + blabla);
 
         model.addAttribute("dog", DogDTO.builder().build());
         model.addAttribute("mode", "add");
