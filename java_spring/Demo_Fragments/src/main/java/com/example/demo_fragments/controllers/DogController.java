@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Optional;
@@ -39,5 +40,20 @@ public class DogController {
         }
 
         throw new ResourceNotFound();
+    }
+
+    @GetMapping("/add")
+    public String getDogForm(Model model) {
+        model.addAttribute("dog", DogDTO.builder().build());
+        model.addAttribute("mode", "add");
+
+        return "dogs/dogForm";
+    }
+
+    @PostMapping("/add")
+    public String addDogHandler(DogDTO newDog) {
+        dogService.addDog(newDog);
+
+        return "redirect:/dogs";
     }
 }

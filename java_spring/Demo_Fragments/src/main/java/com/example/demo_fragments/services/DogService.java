@@ -47,4 +47,14 @@ public class DogService {
     public Optional<DogDTO> getDogById(UUID id) {
         return dogs.values().stream().filter(d -> d.getId().equals(id)).findFirst();
     }
+
+    public DogDTO addDog(DogDTO dogData) {
+        if (dogData.getId() == null) {
+            dogData.setId(UUID.randomUUID());
+        }
+
+        dogs.put(dogData.getId(), dogData);
+
+        return dogData;
+    }
 }

@@ -12,7 +12,7 @@
     <main class="container">
         <h1 class="fw-light">Dog List</h1>
         <hr>
-        <table class="table table-dark table-striped text-center align-middle">
+        <table th:if="${!dogs.isEmpty()}" class="rounded overflow-hidden table table-dark table-striped text-center align-middle">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -39,6 +39,11 @@
                 </tr>
             </tbody>
         </table>
+        <p th:if="${dogs.isEmpty()}">There is no dog in the database yet!</p>
+        <hr>
+        <div class="text-end">
+            <a th:href="@{/dogs/add}" class="btn btn-success"><i class="bi bi-plus-circle"></i> Add a Dog</a>
+        </div>
     </main>
 </body>
 </html>
