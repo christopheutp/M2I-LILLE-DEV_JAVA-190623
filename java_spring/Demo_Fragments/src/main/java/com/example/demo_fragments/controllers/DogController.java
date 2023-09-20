@@ -6,11 +6,10 @@ import com.example.demo_fragments.services.DogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -22,8 +21,14 @@ public class DogController {
     private final DogService dogService;
 
     @GetMapping
-    public String listDogs(Model model) {
-        model.addAttribute("dogs", dogService.getDogs());
+    public String listDogs(Model model, @RequestParam(value = "name", defaultValue = "") String filterByName) {
+        List<DogDTO> dogs = dogService.getDogs();
+
+        if (!filterByName.isEmpty() && !filterByName.isBlank()) {
+            dogs = dogs.stream().filter(d -> d.getName().startsWith(filterByName)).toList();
+        }
+
+        model.addAttribute("dogs", dogs);
 
         return "dogs/list";
     }
@@ -43,7 +48,9 @@ public class DogController {
     }
 
     @GetMapping("/add")
-    public String getDogForm(Model model) {
+    public String getDogForm(Model model, @RequestParam(value = "exemple", defaultValue = "default") String blabla) {
+        System.out.println("blabla: " + blabla);
+
         model.addAttribute("dog", DogDTO.builder().build());
         model.addAttribute("mode", "add");
 
