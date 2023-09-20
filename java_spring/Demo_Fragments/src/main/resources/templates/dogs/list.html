@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dogs List</title>
+    <span th:replace="~{home :: bootstrapImports}"></span>
+</head>
+<body>
+    <header th:insert="~{home :: nav.blabla}">
+
+    </header>
+    <main class="container">
+        <h1 class="fw-light">Dog List</h1>
+        <hr>
+        <table class="table table-dark table-striped text-center align-middle">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Breed</th>
+                    <th>Age</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="d : ${dogs}">
+                    <td th:text="${d.name}"></td>
+                    <td th:text="${d.breed}"></td>
+                    <td th:text="${d.age}"></td>
+                    <td>
+<!--                       http://localhost:8080/dogs/dogId  -->
+<!--                        <a th:href="@{/dogs/dogId}" class="btn btn-outline-info"><i class="bi bi-eye"></i> Details</a>-->
+
+<!--                       http://localhost:8080/dogs?dogId=xxxxxxxxxx -->
+<!--                        <a th:href="@{/dogs/(dogId=${d.id})}" class="btn btn-outline-info"><i class="bi bi-eye"></i> Details</a>-->
+
+                        <!--                       http://localhost:8080/dogs/xxxxxxxxxx -->
+                        <a th:href="@{/dogs/{dogId}(dogId=${d.id})}" class="btn btn-outline-info"><i class="bi bi-eye"></i> Details</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
