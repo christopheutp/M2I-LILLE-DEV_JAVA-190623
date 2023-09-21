@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Persons List</title>
+</head>
+<body>
+    <main>
+        <h1>Persons List</h1>
+        <hr>
+        <p th:if="${persons.isEmpty()}">There is no person in the database yet!</p>
+        <table th:if="${!persons.isEmpty()}">
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Birth date (Age)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="p : ${persons}">
+                    <td th:text="${p.blabla}"></td>
+                    <td th:text="${p.lastName}"></td>
+                    <td th:text="${#temporals.format(p.birthDate, 'yyyy-MM-dd') + ' (' + p.age + 'yo)'}"></td>
+                    <td>
+                        <span th:text="#{blablaTruc}"></span>
+                        <a th:href="@{/persons/details/{id}(id=${p.id})}">Details</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
