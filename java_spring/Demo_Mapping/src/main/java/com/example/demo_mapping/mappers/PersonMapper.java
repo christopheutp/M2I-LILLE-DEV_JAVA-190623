@@ -7,6 +7,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @Mapper
 public interface PersonMapper {
@@ -21,12 +22,13 @@ public interface PersonMapper {
     @Named("convertDateToAge")
     public static Integer convertDateToAge(LocalDate date) {
         LocalDate now = LocalDate.now();
+
         Integer age = now.getYear() - date.getYear();
 
         if (now.minusYears(age).isBefore(date)) {
             age--;
         }
-
+S
         return age;
     }
 }

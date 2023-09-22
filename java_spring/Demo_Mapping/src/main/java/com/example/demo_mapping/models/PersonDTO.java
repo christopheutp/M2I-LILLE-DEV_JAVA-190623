@@ -14,6 +14,6 @@ public class PersonDTO {
     private UUID id;
     private String blabla;
     private String lastName;
-    private LocalDate birthDate;
+    private String birthDate;
     private Integer age;
 }

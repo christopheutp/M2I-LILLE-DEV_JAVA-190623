@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @Primary
@@ -34,5 +36,9 @@ public class PersonService {
 
         return personMapper.personToPersonDto(personRepository
                 .save(personMapper.personDtoToPerson(dto)));
+    }
+
+    public PersonDTO getPersonById(UUID id) {
+        return personMapper.personToPersonDto(personRepository.findById(id).orElse(null));
     }
 }
