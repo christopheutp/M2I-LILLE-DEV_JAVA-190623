@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page 2</title>
+    <th:block th:insert="~{home::bootstrapImports}"/>
+</head>
+<body>
+    <main>
+        <h1 th:class="${testParam.equals('blabla') ? 'truc' : ''}">Home Page avec Params</h1>
+        <hr>
+        <p><b>Paramètre A: </b><span th:text="${testParam}"></span></p>
+
+        <ul th:if="${!testParams.isEmpty()}" th:each="pre : ${testParams}">
+            <li th:text="${pre}"></li>
+        </ul>
+
+        <p th:unless="${!testParams.isEmpty()}">Il n'y a pas de valeurs dans la liste testParams</p>
+
+        <th:block th:switch="${testSwitch}">
+            <button th:case="A"><span>J'ai la valeur A!</span></button>
+            <button th:case="B"><span>J'ai la valeur B!</span></button>
+            <button th:case="C"><span>J'ai la valeur C!</span></button>
+            <a href="#"><span th:case="D">J'ai la valeur D!</span></a>
+        </th:block>
+
+        <p>
+            <span th:text="#{maVariableSpring}"></span>
+        </p>
+
+        <a th:href="@{/blabla}">/blabla</a>
+
+        <a th:href="@{/blabla(paramA='qqch')}">/blabla?paramA=qqch</a>
+        <a th:href="@{/blabla(paramA=${contact.firstname})}">/blabla?paramA=<span th:text="${contact.firstname}"></span></a>
+
+        <a th:href="@{/blabla/{paramA}(paramA='qqch')}">/babla/qqch</a>
+        <a th:href="@{/blabla/{paramA}(paramA=${contact.firstname})}">/babla/<span th:text="${contact.firstname}"></span></a>
+
+        <ul th:object="${contact}">
+            <li><b>Firstname: </b><span th:text="*{firstname}"></span></li>
+            <li><b>Firstname: </b><span th:text="*{lastname}"></span></li>
+        </ul>
+    </main>
+</body>
+</html>
