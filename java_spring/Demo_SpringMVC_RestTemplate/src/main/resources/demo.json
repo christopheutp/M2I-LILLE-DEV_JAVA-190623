@@ -1,0 +1,13 @@
+{
+  "propA": {
+    "propB": {
+      "propC": [
+        {
+          "fieldA": {
+            "fieldB": "titi"
+          }
+        }
+      ]
+    }
+  }
+}
