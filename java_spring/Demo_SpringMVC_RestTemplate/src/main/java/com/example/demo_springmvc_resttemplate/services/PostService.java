@@ -1,5 +1,6 @@
 package com.example.demo_springmvc_resttemplate.services;
 
+import com.example.demo_springmvc_resttemplate.models.PokemonDTO;
 import com.example.demo_springmvc_resttemplate.models.PostDTO;
 import com.fasterxml.jackson.databind.JsonNode;
 import lombok.RequiredArgsConstructor;
@@ -77,5 +78,25 @@ public class PostService {
                 .collect(Collectors.toList());
 
         return titles;
+    }
+
+    public PokemonDTO getPokemon(String name) {
+        RestTemplate restTemplate = builder.build();
+
+        ResponseEntity<JsonNode> responseJson = restTemplate
+                .getForEntity("pokemon/" + name, JsonNode.class);
+
+        List<String> abilityNames = new ArrayList<>();
+
+        String nameFound = responseJson.getBody().get("name").asText();
+
+        responseJson.getBody().findPath("abilities").elements().forEachRemaining(a -> {
+            abilityNames.add(a.findPath("ability").get("name").asText());
+        });
+
+        return PokemonDTO
+                .builder()
+                .abilities(abilityNames)
+                .build();
     }
 }
