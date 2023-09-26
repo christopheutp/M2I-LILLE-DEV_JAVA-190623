@@ -4,6 +4,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,22 +15,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class BaseController {
     @GetMapping
-    public String getHomePage(HttpServletRequest request) {
-        HttpSession session = request.getSession();
-        session.setAttribute("user", "johnny");
-
+    public String getHomePage() {
         return "home";
     }
 
+    @GetMapping("/login")
+    public String loginForm() {
+        return "loginForm";
+    }
+
     @PostMapping("/login")
-    public String login() {
-        // Récupérer les valeurs du formulaire
+    public String login(String username, String password, HttpServletRequest request) {
+        if (username != null && username.equals("admin") && password != null && password.equals("admin")) {
+            HttpSession session = request.getSession();
+            session.setAttribute("user", "johnny");
 
-        // Si elles sont égales à certaines variables, tu ajoute en session l'utilisateur
+            return "redirect:/private";
+        }
 
-        // Sinon, tu redirige vers la page d'accueil / tu retourne le formulaire avec erreurs
-
-        return null;
+        return "redirect:/login";
     }
 
 }

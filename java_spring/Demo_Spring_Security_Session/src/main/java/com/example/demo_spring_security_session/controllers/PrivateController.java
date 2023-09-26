@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Enumeration;
+
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/private")
@@ -20,7 +22,7 @@ public class PrivateController {
             return "private/secrets";
         }
 
-        return "redirect:/";
+        return "redirect:";
     }
 }
 
