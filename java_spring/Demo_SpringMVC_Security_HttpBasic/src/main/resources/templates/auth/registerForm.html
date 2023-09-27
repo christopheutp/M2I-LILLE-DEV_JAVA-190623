@@ -2,13 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Register Form</title>
+    <title th:text="${#strings.capitalize(mode) + ' Form'}"></title>
 </head>
 <body>
     <main>
-        <h1>Register Yourself</h1>
+        <h1><span th:text="${#strings.capitalize(mode)}"></span> Yourself</h1>
         <hr>
-        <form action="#" th:action="@{/auth/register}" method="post" th:object="${formValues}">
+        <form action="#" th:action="@{/auth/{mode}(mode=${mode})}" method="post" th:object="${formValues}">
             <div>
                 <label for="email">Email:</label>
                 <input type="email" id="email" required th:field="*{email}">

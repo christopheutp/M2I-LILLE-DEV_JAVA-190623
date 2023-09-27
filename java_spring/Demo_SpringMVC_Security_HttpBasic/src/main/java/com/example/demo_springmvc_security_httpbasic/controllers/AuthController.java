@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AuthController {
     private final AuthService authService;
 
-    @GetMapping("/register")
+    @GetMapping("register")
     public String getRegisterForm(Model model) {
         model.addAttribute("mode", "register");
         model.addAttribute("formValues", AuthenticationRequest.builder().build());
@@ -27,7 +27,7 @@ public class AuthController {
         return "auth/registerForm";
     }
 
-    @PostMapping("/register")
+    @PostMapping("register")
     public String registerHandler(AuthenticationRequest formValues, HttpServletRequest request) {
         authService.register(formValues);
 
@@ -45,5 +45,17 @@ public class AuthController {
         model.addAttribute("formValues", AuthenticationRequest.builder().build());
 
         return "auth/registerForm";
+    }
+
+    @PostMapping("authenticate")
+    public String authenticateHandler(AuthenticationRequest formValues, HttpServletRequest request) {
+        authService.authenticate(formValues);
+
+        SecurityContext context = SecurityContextHolder.getContext();
+        HttpSession session = request.getSession();
+
+        session.setAttribute("SPRING_SECURITY_CONTEXT", context);
+
+        return "redirect:/private";
     }
 }
