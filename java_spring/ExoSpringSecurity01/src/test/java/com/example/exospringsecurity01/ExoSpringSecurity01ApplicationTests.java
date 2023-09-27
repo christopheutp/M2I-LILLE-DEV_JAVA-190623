@@ -1,0 +1,13 @@
+package com.example.exospringsecurity01;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class ExoSpringSecurity01ApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
