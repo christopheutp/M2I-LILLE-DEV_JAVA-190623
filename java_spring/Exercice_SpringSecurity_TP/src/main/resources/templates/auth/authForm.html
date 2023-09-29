@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${#strings.capitalize(mode) + ' yourself'}"></title>
+    <th:block th:replace="~{home :: bootstrapImports}" />
+</head>
+<body>
+<header>
+    <th:block th:replace="~{home :: nav}" />
+</header>
+<main class="container py-3">
+    <h1 class="fw-light" th:text="${#strings.capitalize(mode) + ' yourself'}"></h1>
+    <hr>
+    <form action="#" th:action="@{/auth/{mode}(mode= ${mode})}" method="post" th:object="${authRequest}">
+        <th:block th:if="${mode.equals('register')}">
+            <div class="mb-3">
+                <label for="firstname" class="form-label">Firstname:</label>
+                <input type="text" th:field="*{firstname}" id="firstname" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="lastname" class="form-label">Lastname:</label>
+                <input type="text" th:field="*{lastname}" id="lastname" class="form-control" required>
+            </div>
+        </th:block>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" th:field="*{email}" id="email" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" th:field="*{password}" id="password" class="form-control" required>
+        </div>
+    <hr>
+        <div class="text-end">
+            <a th:href="@{/auth/{mode}(mode=${mode.equals('register') ? 'authenticate' : 'register'})}" class="btn btn-outline-secondary" th:text="${mode.equals('register') ? 'Authenticate' : 'Register'}"></a>
+            <button class="btn btn-outline-primary"><i class="bi bi-send"></i> Submit</button>
+        </div>
+    </form>
+
+</main>
+</body>
+</html>

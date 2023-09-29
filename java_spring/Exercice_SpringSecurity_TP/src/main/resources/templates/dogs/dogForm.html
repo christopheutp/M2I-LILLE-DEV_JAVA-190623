@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${ (!mode.equals('details') ? #strings.capitalize(mode) + 'a Dog' : 'View a Dog') }"></title>
+    <th:block th:replace="~{home :: bootstrapImports}" />
+</head>
+<body>
+    <header>
+        <th:block th:replace="~{home :: nav}" />
+    </header>
+    <main class="container py-3">
+        <h1 class="fw-light" th:text="${ (!mode.equals('details') ? #strings.capitalize(mode) + 'a Dog' : 'View a Dog') }"></h1>
+        <hr>
+        <form action="#" th:action="@{/dogs/{route}(route = ${mode.equals('add') ? 'add' : mode + '/' + dog.id})}" method="post" th:object="${dog}">
+            <input type="text" th:field="*{id}" readonly class="d-none">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" id="name" th:field="*{name}" th:required="${mode.equals('add') || mode.equals('edit')}" th:readonly="${mode.equals('details') || mode.equals('delete')}" class="form-control">
+                <span th:if="${#fields.hasErrors('name')}" th:class="text-danger">Invalid dog name!</span>
+            </div>
+            <div class="mb-3">
+                <label for="birthDate" class="form-label">Birth date:</label>
+                <input type="date" id="birthDate" th:field="*{birthDate}" th:required="${mode.equals('add') || mode.equals('edit')}" th:readonly="${mode.equals('details') || mode.equals('delete')}" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="breed" class="form-label">Breed:</label>
+                <select th:field="*{breed}" id="breed" class="form-select">
+                    <option value="">Select a breed</option>
+                    <option th:each="breed : ${breeds}" th:value="${#strings.capitalize(breed.name())}"><span th:text="${#strings.capitalize(breed.name())}"></span> </option>
+                </select>
+            </div>
+            <hr>
+            <th:block th:switch="${mode}">
+                <a th:class="details" th:href="@{/dogs}" class="btn btn-outline-secondary"><i class="bi bi-arrow-counterclockwise"></i> Back to List</a>
+                <button th:case="add" class="btn btn-outline-success"><i class="bi bi-plus-circle"></i> Add</button>
+                <button th:case="edit" class="btn btn-outline-warning"><i class="bi bi-pencil-square"></i> Edit</button>
+                <button th:case="delete" class="btn btn-outline-danger"><i class="bi bi-plus-trash"></i> Confirm</button>
+            </th:block>
+        </form>
+    </main>
+</body>
+</html>
