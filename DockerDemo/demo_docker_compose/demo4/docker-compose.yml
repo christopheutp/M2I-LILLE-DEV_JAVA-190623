@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  wordpress:
+    image: wordpress:latest
+    environment:
+      - WORDPRESS_DB_HOST=db
+      - WORDPRESS_DB_USER=user1
+      - WORDPRESS_DB_PASSWORD=12345
+      - WORDPRESS_DB_NAME=demodb
+    ports:
+      - 8081:80
+    networks:
+      - custom_network
+    depends_on:
+      - db2
+
+  db2:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345
+      - MYSQL_DATABASE=demodb
+      - MYSQL_USER=user1
+      - MYSQL_PASSWORD=12345
+    ports:
+     - 3307:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - custom_network
+
+volumes:
+  mysql_data:
+
+networks:
+  custom_network:
+    driver: bridge
