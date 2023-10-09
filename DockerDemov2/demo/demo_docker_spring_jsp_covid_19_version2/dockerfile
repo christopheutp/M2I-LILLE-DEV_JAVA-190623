@@ -1,0 +1,11 @@
+FROM maven:3.8.1 as builder
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean package
+
+FROM eclipse-temurin
+ARG JAR_FILE=/app/target/*.war
+COPY --from=builder ${JAR_FILE} app.war
+EXPOSE 8080
+ENTRYPOINT [ "java","-jar","/app.war" ]
