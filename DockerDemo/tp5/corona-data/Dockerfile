@@ -13,7 +13,6 @@ COPY src/ /app/src/
 # Exécuter la commande "mvn package" pour construire l'application Java à partir des sources et générer le fichier JAR
 RUN mvn package
 
-
 # Étape 2 : Utiliser l'image AdoptOpenJDK 15 comme image de base pour l'étape de production (pas de nom d'étape)
 FROM adoptopenjdk/openjdk15:jre-15.0.1_9
 
