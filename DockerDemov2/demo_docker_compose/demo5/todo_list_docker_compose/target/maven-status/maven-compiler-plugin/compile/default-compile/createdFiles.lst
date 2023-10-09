@@ -1,0 +1,8 @@
+com/nttdata/ta/todo/ServletInitializer.class
+com/nttdata/ta/todo/TodoRestController$Result.class
+com/nttdata/ta/todo/TodoItem.class
+com/nttdata/ta/todo/TodoRestController.class
+com/nttdata/ta/todo/TodoItemRepository.class
+com/nttdata/ta/todo/TodoAppController.class
+com/nttdata/ta/todo/TodoListViewModel.class
+com/nttdata/ta/todo/TodoApplication.class

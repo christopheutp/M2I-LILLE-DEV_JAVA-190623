@@ -1,0 +1,3 @@
+## TP Docker compose
+ - Créer le docker-compose pour ce projet... 
+ - Vous devez être capable de lancer le projet dans un container avec la persistence.

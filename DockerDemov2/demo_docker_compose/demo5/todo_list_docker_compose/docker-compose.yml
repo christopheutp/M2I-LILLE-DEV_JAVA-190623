@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  my-mysql:
+    image: mysql:5.7
+    container_name: my-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345
+      - MYSQL_USER=user 
+      - MYSQL_DATABASE=tododb
+      - MYSQL_PASSWORD=12345
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  my-app-todo:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: my-app-todo
+    ports:
+      - 8090:8080
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://my-mysql:3306/tododb?allowPublicKeyRetrieval=true&autoReconnect=true&useSSL=false
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=12345
+    depends_on:
+      - my-mysql
+volumes:
+  mysql_data:
