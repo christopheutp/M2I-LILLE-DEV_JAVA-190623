@@ -1,0 +1,57 @@
+pipeline {
+    agent any
+    
+    tools{
+        maven 'maven'
+    }
+    
+    environment{
+        REPO_URL = 'https://github.com/mohamedutopios/test_spring_jenkins.git'
+        GITHUB_TOKEN = credentials('githubtoken')
+    }
+
+    stages {
+        stage('Code Source') {
+            steps {
+                script {
+                    
+                    git branch: 'master', credentialsId: 'githubtoken', url: REPO_URL
+                }
+                
+               
+            }
+
+        }
+          stage('Build') {
+            steps {
+                
+                sh 'mvn clean package'
+            }
+
+        }
+           stage('Test') {
+            steps {
+                
+                sh 'mvn test'
+            }
+            
+            post{
+                always{
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+
+        }
+         stage('SonarQube Analyse') {
+            steps {
+               script{
+                   withSonarQubeEnv(installationName:'sonar', credentialsId: 'tokensonar'){
+                       sh 'mvn sonar:sonar'
+                   }
+               } 
+               
+            }
+
+        }
+    }
+}

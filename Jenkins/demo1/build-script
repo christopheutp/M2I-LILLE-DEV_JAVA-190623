@@ -1,0 +1,9 @@
+https://github.com/mohamedutopios/todolist.git
+
+## Étapes du build
+
+docker login -u ${dockerusername} -p ${dockerpassword}
+docker build -t mohamed1780/app-node:${BUILD_NUMBER} .
+docker images
+docker push mohamed1780/app-node:${BUILD_NUMBER}
+docker-compose up -d
