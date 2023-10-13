@@ -1,19 +1,27 @@
-# Demonstration réseau Docker 
+## Demo volumes
 
-### Créer un réseau + y placer 2 containers + faire communiquer ces containers (ping) + les deconnecter du réseau + les reconnecter à un autre réseau.
+### Créer un volume et l'utiliser avec 2 machines : **
 
-- docker network create --driver <DRIVER TYPE> <NETWORK NAME>
-- docker network create --driver bridge mon-bridge
-- docker network ls
-- docker network inspect mon-bridge
-- docker run -dit --name alpine1 --network mon-bridge alpine
-- docker run -dit --name alpine2 --network mon-bridge alpine
-- docker network inspect mon-bridge
-- docker exec alpine1 ping -c 1 172.21.0.3
-- docker exec alpine2 ping -c 1 172.21.0.2
-- docker network disconnect mon-bridge alpine1
-- docker network disconnect mon-bridge alpine2
-- docker exec alpine1 ip a
-- docker network rm mon-bridge
-- docker network connect bridge alpine1
-- docker network connect bridge alpine2
+
+- docker volume create share- docker volume ls
+- docker run -itd --name=ubuntu1 -v share:/tmp ubuntu
+- docker exec -it ubuntu1 bash
+-> cd tmp/
+-> ls
+-> echo "coucou" >> fichier.txt
+- docker run -itd --name=ubuntu2 -v share:/tmp ubuntu
+- docker exec -it ubuntu2 bash
+-> cd tmp
+-> cat fichier.txt
+- docker stop $(docker ps -aq) && docker rm $(docker ps -aq)
+- docker run -itd --name=ubuntu3 -v share:/tmp ubuntu
+- docker exec -it ubuntu3 bash
+- cd tmp
+- ls
+
+ ### Volume en local (volume lié): 
+
+
+- git clone https://gitlab.com/mohamed_formation_test/projet_web.git
+- docker run -d --name demo-web -p 80:80 -v /Users/mohamed/Documents/formation/Docker/Docker/projet_web:/usr/local/apache2/htdocs/ httpd
+- changement de la page en local
