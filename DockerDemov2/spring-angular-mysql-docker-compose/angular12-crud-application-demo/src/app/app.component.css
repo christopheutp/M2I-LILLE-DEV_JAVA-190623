@@ -1,0 +1,20 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.add-employee-button {
+  font-size: large;
+  margin-left: 150px;
+}
+
+.employees-list-button {
+  font-size: large;
+  margin-left: 20px;
+}
+
+.mat-card {
+  margin-left: 22%;
+  margin-top: 20px;
+  width: 50%;
+  font-size: large;
+}

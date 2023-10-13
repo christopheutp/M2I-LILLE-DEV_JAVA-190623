@@ -1,0 +1,111 @@
+<mat-card class="mat-cart">
+  <h3>Create Employee</h3>
+  <div [hidden]="submitted" style="width: 400px">
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <mat-form-field
+          class="example-full-width"
+          appearance="legacy"
+          hintLabel="Max 20 characters"
+        >
+          <mat-label>First Name</mat-label>
+          <input
+            #firstName
+            maxlength="20"
+            matInput
+            required
+            [(ngModel)]="employee.firstName"
+            name="firstName"
+          />
+          <mat-hint align="end">{{ firstName.value?.length || 0 }}/20</mat-hint>
+        </mat-form-field>
+      </div>
+      <div style="margin-top: 20px">
+        <mat-form-field
+          class="example-full-width"
+          appearance="legacy"
+          hintLabel="Max 20 characters"
+        >
+          <mat-label>Last Name</mat-label>
+          <input
+            #lastName
+            maxlength="20"
+            matInput
+            required
+            [(ngModel)]="employee.lastName"
+            name="lastName"
+          />
+          <mat-hint align="end">{{ lastName.value?.length || 0 }}/20</mat-hint>
+        </mat-form-field>
+      </div>
+      <div style="margin-top: 20px">
+        <mat-form-field
+          class="example-full-width"
+          appearance="legacy"
+          hintLabel="Max 50 characters"
+        >
+          <mat-label>Email</mat-label>
+          <input
+            #email
+            maxlength="50"
+            matInput
+            required
+            [(ngModel)]="employee.email"
+            name="email"
+          />
+          <mat-hint align="end">{{ email.value?.length || 0 }}/50</mat-hint>
+        </mat-form-field>
+      </div>
+      <div style="margin-top: 20px">
+        <mat-form-field
+          class="example-full-width"
+          appearance="legacy"
+          hintLabel="Max 20 characters"
+        >
+          <mat-label>Phone Number</mat-label>
+          <input
+            #phoneNumber
+            maxlength="20"
+            matInput
+            required
+            [(ngModel)]="employee.phoneNumber"
+            name="phoneNumber"
+          />
+          <mat-hint align="end"
+            >{{ phoneNumber.value?.length || 0 }}/20</mat-hint
+          >
+        </mat-form-field>
+      </div>
+      <div style="margin-top: 20px">
+        <mat-form-field
+          class="example-full-width"
+          appearance="legacy"
+          hintLabel="Max 20 characters"
+        >
+          <mat-label>Department</mat-label>
+          <input
+            #department
+            maxlength="20"
+            matInput
+            required
+            [(ngModel)]="employee.department"
+            name="department"
+          />
+          <mat-hint align="end"
+            >{{ department.value?.length || 0 }}/20</mat-hint
+          >
+        </mat-form-field>
+      </div>
+      <div style="margin-top: 20px">
+        <button mat-raised-button color="primary">
+            Submit
+            <mat-icon>save</mat-icon>
+        </button>
+        <button style="margin-left: 10px;" mat-raised-button color="warn" onClick="alert('Clearing')">
+          Clear
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+</mat-card>

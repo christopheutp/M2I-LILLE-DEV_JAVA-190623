@@ -1,0 +1,16 @@
+.mat-card {
+  margin-left: 22%;
+  margin-top: 20px;
+  width: 55%;
+  font-size: large;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.example-full-width {
+  width: 100%;
+}

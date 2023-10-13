@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  mysql-standalone:
+    image: mysql:latest
+    container_name: mysql-standalone
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin123
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=testuser
+      - MYSQL_PASSWORD=testuser@123
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - angular_spring_network
+
+  springboot-docker-container:
+    container_name: springboot-docker-container
+    ports:
+      - 8081:8081
+    build:
+      context: ./
+      dockerfile: springboot-crud-application-demo/Dockerfile
+    depends_on:
+      - mysql-standalone
+    networks:
+      - angular_spring_network
+
+  angular-nginx:
+    build:
+      context: ./
+      dockerfile: angular12-crud-application-demo/Dockerfile
+    container_name: angular-nginx
+    ports:
+      - 80:80
+    depends_on:
+      - springboot-docker-container
+    networks:
+      - angular_spring_network
+volumes:
+  mysql-data:
+networks:
+  angular_spring_network:
+   driver: bridge
