@@ -164,22 +164,167 @@ switch (uneReponse) {
 
 // Boucle FOR
 
-for (let i = 1; i <= 10; i++) {
-    console.log(i + "ème itération");
-}
+// for (let i = 1; i <= 10; i++) {
+//     console.log(i + "ème itération");
+// }
 
 // DO...WHILE...
 
-let monNom = ""
+// let monNom = ""
 
-do {
-    monNom = prompt("Veuillez entrer votre nom:")
-} while (monNom == "");
+// do {
+//     monNom = prompt("Veuillez entrer votre nom:")
+// } while (monNom == "");
 
 // WHILE...
 
-let unNombre = 0
+// let unNombre = 0
 
-while (unNombre <= 0) {
-    unNombre = prompt("Veuillez entrer un nombre strictement positif:")
+// while (unNombre <= 0) {
+//     unNombre = prompt("Veuillez entrer un nombre strictement positif:")
+// }
+
+/*
+    Boucles d'affichage
+*/
+
+// FOR...OF...
+
+const MON_TEXTE = "ABCDEFGHIJ"
+
+for(const lettre of MON_TEXTE) {
+    console.log(lettre);
 }
+
+// LES ARRAYS
+
+/*
+    Creation d'un array: let / const nomArray = [ ... valeurs de base ]
+
+    Attention: Pas de typage non plus sur les tableaux, qui peuvent contenir tout type de variables
+*/
+
+let monTableau = [1, "Blabla", true, [1, 2, 3]]
+
+// Un Array est itérable
+
+for (const element of monTableau) {
+    console.log(element);
+}
+
+// Ajout en fin d'Array
+monTableau.push("Nouvel élément")
+
+// Ajout en début d'Array
+monTableau.unshift("Encore un")
+
+console.log(monTableau);
+
+// Retrait en fin d'Array
+monTableau.pop()
+
+console.log(monTableau);
+
+// Retrait en début d'Array
+monTableau.shift()
+
+// SPREAD OPERATOR : ...
+
+console.log(monTableau);
+
+let tabA = [1, 2, 3]
+let tabB = [4, 5, 6]
+
+let result = [...tabA, ...tabB] // [1, 2, 3, 4, 5, 6]
+console.log(result);
+
+let autreTab = [...result, 7, 8, 9]
+console.log(autreTab);
+
+// DECONSTRUCTING
+
+let [premierElement, secondElement, ...leReste] = autreTab
+
+console.log(premierElement);
+console.log(secondElement);
+console.log(leReste);
+
+// INVERSER DEUX VARIABLES VIA CONSTRUCTING / DECONSTRUCTING
+
+let variableA = 25
+let variableB = 12
+
+console.log(variableA);
+console.log(variableB);
+
+[variableA, variableB] = [variableB, variableA]
+
+console.log(variableA);
+console.log(variableB);
+
+// FONCTIONS
+
+function sansParam() {
+    console.log("Sans params");
+}
+
+function avecParam(param) {
+    console.log("Avec paramètre :" + param);
+}
+
+function avecRetour() {
+    return "Hello"
+}
+
+function addition(nbA, nbB) {
+    return nbA + nbB
+}
+
+// Fonctions constantes multi-lignes
+
+const maFonctionConstante = (a, b) => {
+    console.log("je débute ma fonction");
+    return a - b;
+}
+
+// Fonction constantes mono-ligne
+
+const maSoustraction = (a, b) => a - b
+
+console.log(maFonctionConstante(10, 2));
+
+console.log(addition(1, 2));
+console.log(addition("Truc", 25));
+
+const mesPrenoms = [
+    "Albert", "Bernard", "Chloée", "Elliot", "Babar"
+]
+
+console.log(mesPrenoms.find((prenom) => prenom.startsWith("B")));
+
+// POUR EVITER DE FAIRE X FONCTIONS...
+
+// function monAddition(a, b) { 
+//     // Autant de code qu'on veut
+//     return a + b
+// }
+
+// function maSoustraction(a, b) {
+//     // Autant de code qu'on veut
+//     return a - b
+// }
+
+
+/*
+    Pour éviter de faire X fonction ayant le même code en commun, on peut créer une fonction qui va posséder le code en commun et ensuite retourner le retour d'une fonction dans son corps. 
+
+    De la sorte, on met en commun un bloc de code tout en gardant la fonctionnalité spécifique
+*/
+
+function monOperation(a, b, operation) {
+    // Autant de code qu'on veut
+    console.log("Je fais une operation");
+    return operation(a, b)
+}
+
+console.log(monOperation(4, 6, (a , b) => a + b));
