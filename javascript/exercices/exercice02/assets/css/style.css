@@ -1,0 +1,89 @@
+:root {
+    --text-color-01: rgb(0, 57, 0);
+}
+
+body, html {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & form {
+        background-color: rgb(117, 163, 120);
+        padding: 20px;
+        border-radius: 15px;
+        font-family: monospace;
+        color: var(--text-color-01);
+
+
+        > h1 {
+            margin-block: 0 2vh;
+            position: relative;
+
+            
+        }
+
+        > h1::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            border-bottom: 1px solid var(--text-color-01);
+            bottom: -5px;
+            left: 0;
+        }
+
+        > div {
+            margin-block: 1vh;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            > *:last-child {
+                margin-left: auto;
+            }
+
+            > input {
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid var(--text-color-01);
+                color: white;
+                padding-bottom: 0.5vh;
+                font-size: 1.1rem;
+                font-family: monospace;
+            }
+
+            > input:focus {
+                outline: none;
+            }
+
+            > button {
+                margin-top: 2vh;
+                background-color: green;
+                padding: 1vh 2vw;
+                border: none;
+                border-radius: 5px;
+                font-size: 1.1rem;
+                font-weight: bold;
+                color: white;
+                transition: transform 200ms linear,
+                            background-color 200ms linear;
+            }
+    
+            > button:hover {
+                transform: scale(1.05);
+                background-color: rgb(14, 166, 14);
+                cursor: pointer;
+            }
+        }
+
+        
+
+    }
+}
+
