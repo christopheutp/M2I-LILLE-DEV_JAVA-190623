@@ -44,6 +44,10 @@ body {
             justify-content: space-between;
             align-items: center;
 
+            > img:first-child {
+                margin-bottom: 1vh;
+            }
+
             > form {
                 width: 90%;
                 background-color: var(--bg-grey);
@@ -155,12 +159,20 @@ body {
             padding-inline: 10%;
 
             & span {
-                font-size: 3rem;
+                font-size: 1.6rem;
+                height: max(50px, 4vh);
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 width: 80%;
                 padding: 10px 5px;
                 border-radius: 10px;
                 background-color: var(--bg-grey);
                 color: white;
+            }
+
+            > #pokemon-name {
+                font-size: 3rem;
             }
 
             > div {
