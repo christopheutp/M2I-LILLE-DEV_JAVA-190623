@@ -70,7 +70,12 @@ body {
                 font-family: monospace;
                 font-size: 2rem;
                 border-radius: 5px;
-                transition: background-color 200ms ease;
+                transition: background-color 200ms ease,
+                            transform 200ms ease;
+            }
+
+            > button:active {
+                transform: scale(0.95);
             }
 
             > button:hover {
