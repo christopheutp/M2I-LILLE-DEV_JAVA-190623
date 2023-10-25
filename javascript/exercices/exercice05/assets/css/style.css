@@ -1,0 +1,222 @@
+:root {
+    --bg-grey: rgb(42, 42, 42);
+    --bg-grey-lighter: rgb(78, 78, 78);
+}
+
+body, html {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        30deg,
+        green 25%,
+        blue 75%,
+        pink
+    );
+
+    > main {
+        height: min(80%, 800px);
+        width: min(80%, 1200px);
+        box-sizing: border-box;
+        border-radius: 3vh;
+        overflow: hidden;
+        display: grid;
+        grid-template: 1fr / 4fr 6fr ;
+        gap: 2vh 2vw;
+        padding: 2.5vh 3.5vw;
+        background-color: red;
+        font-family: monospace;
+        
+        > div:first-child {
+            height:90%;
+            box-sizing: border-box;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            > form {
+                width: 90%;
+                background-color: var(--bg-grey);
+                display: flex;
+                gap: 10px;
+                border-radius: 5px;
+
+                > input {
+                    width: 80%;
+                    height: min(10vh, 50px);
+                    margin: 5px 15px;
+                    box-sizing: border-box;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid rgb(86, 86, 86);
+                    padding-left: 5%;
+                    color: white;
+                    font-size: 1.1rem;
+                    font-family: monospace;
+                }
+
+                > input:focus {
+                    outline: none;
+                }
+
+                > button {
+                    border: 2px solid white;
+                    border-radius: 5px;
+                    color: white;
+                    background-color: transparent;
+
+                    > .icon {
+                        height: 2.5rem;
+                        width: 2.5rem;
+                        filter: invert(1);
+                        transition: transform 200ms ease;
+
+                    }
+
+                    transition: transform 200ms ease;
+                }
+
+                > button:not([disabled]):hover {
+                    cursor: pointer;
+                    transform: scale(1.05);
+
+                    > .icon {
+                        transform: scale(1.05);
+                    }
+                }
+
+                > button:not([disabled]):active {
+                    transform: scale(0.95);
+
+                    > .icon {
+                        transform: scale(0.95);
+                    }
+                }
+            }
+
+            > img:not(:first-child) {
+                border: 25px solid white;
+                box-sizing: border-box;
+                border-radius: 15px;
+                padding: 10px;
+                background-color: var(--bg-grey);
+                width: 100%;
+                object-fit: contain;
+                margin-block: 2vh;
+            }
+
+            >div:last-child {
+                width: 80%;
+                display: flex;
+                justify-content: space-between;
+
+                > button {
+                    border: none;
+                    color: white;
+                    font-size: 2rem;
+                    font-weight: bold;
+                    height: 5rem;
+                    width: 5rem;
+                    border-radius: 50%;
+                    background-color: rgb(0, 0, 64);
+                    transition: transform 200ms ease,
+                                background-color 200ms ease;
+                }
+
+                > button:not([disabled]):hover {
+                    cursor: pointer;
+                    background-color: rgb(9, 9, 98);
+                    transform: scale(1.05);
+                }
+
+                > button:not([disabled]):active {
+                    transform: scale(0.95);
+                }
+            }
+        }
+
+        > div:last-child {
+            display: flex;
+            gap: 2vh 2vw;
+            flex-direction: column;
+            align-items: center;
+            padding-block: 2vh;
+            text-align: center;
+            padding-inline: 10%;
+
+            & span {
+                font-size: 3rem;
+                width: 80%;
+                padding: 10px 5px;
+                border-radius: 10px;
+                background-color: var(--bg-grey);
+                color: white;
+            }
+
+            > div {
+                display: flex;
+                justify-content: space-between;
+                width: 90%;
+                gap: 2vw;
+            }
+
+            > ul {
+                padding: 0;
+                list-style: none;
+            }
+
+            > #pokemon-types {
+                display: flex;
+                width: 60%;
+                align-items: center;
+                justify-content: center;
+                padding-inline: 2vw;
+                gap: 1vw;
+                height: max(5vh, 50px);
+                background-color: var(--bg-grey);
+                border-radius: 10px;
+
+                > li {
+                    color: white;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    font-size: 1.2rem;
+                    background-color: var(--bg-grey-lighter);
+                    padding: 0.5vh 1vw;
+                }
+            }
+
+            > #pokemon-abilities {
+                display: grid;
+                grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+                width: 100%;
+                height: max(25vh, 250px);
+                background-color: var(--bg-grey);
+                border-radius: 15px;
+                gap: 2vw 2vh;
+                padding: 1.5vh 1.5vw;
+
+                > li {
+                    background-color: var(--bg-grey-lighter);
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-size: 1.5rem;
+                    position: relative;
+                }
+            }
+        }
+    }
+}
