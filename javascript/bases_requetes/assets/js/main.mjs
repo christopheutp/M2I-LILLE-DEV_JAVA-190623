@@ -41,6 +41,9 @@ const newPost = new Post(
 try {
     response = await fetch(url, {
         method: "POST",
+        headers: {
+            "Authorization": "Bearer " + JWT ?? ""
+        },
         body: JSON.stringify(newPost)
     })
 
