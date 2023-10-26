@@ -137,6 +137,11 @@ body {
                                 background-color 200ms ease;
                 }
 
+                > button:disabled {
+                    cursor: not-allowed;
+                    background-color: gray;
+                }
+
                 > button:not([disabled]):hover {
                     cursor: pointer;
                     background-color: rgb(9, 9, 98);
