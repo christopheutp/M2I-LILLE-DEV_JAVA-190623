@@ -39,4 +39,9 @@ const paragrapheElement = document.querySelector('#mon-paragraphe');
 paragrapheElement.textContent = "Toto";
 const inputElement = document.querySelector('#mon-input');
 console.log(inputElement.value);
+const leBouton = document.querySelector('#mon-bouton');
+leBouton.addEventListener('click', (event) => {
+    console.log(event);
+    console.log("Hello world");
+});
 // maVariable = 255

@@ -67,4 +67,12 @@ const inputElement = document.querySelector('#mon-input') as HTMLInputElement
 
 console.log(inputElement.value);
 
+const leBouton = document.querySelector('#mon-bouton') as HTMLButtonElement
+
+leBouton.addEventListener('click', (event: MouseEvent) => {
+    console.log(event);
+    console.log("Hello world");
+    
+})
+
  // maVariable = 255
