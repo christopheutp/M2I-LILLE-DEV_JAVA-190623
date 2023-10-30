@@ -1,0 +1,33 @@
+<p>
+    age: {{ age }}
+</p>
+<button (click)="incrementAge()">Increment</button>
+
+<!-- Pour du rendu conditionnel, on va utiliser la directive ngIf tel que: -->
+
+<div *ngIf="age >= 18; else blabla">
+    La condition est vérifiée !
+</div>
+<!-- <div *ngIf="age < 18">
+    La condition est erronée !
+</div> -->
+<ng-template #blabla>
+    <div>
+        La condition est erronée !
+    </div>
+</ng-template>
+
+<!-- Pour du rendu itératif, il est possible d'utiliser la directive ngFor -->
+
+<ul>
+    <li *ngFor="let prenom of mesPrenoms">
+        {{ prenom }}
+    </li>
+</ul>
+
+<hr>
+<p>
+    firstname: <b>{{ firstname }}</b>
+</p>
+<input type="text" [value]="firstname" (input)="firstnameInputHandler($event)">
+<input type="text" [(ngModel)]="firstname">
