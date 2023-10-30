@@ -1,0 +1,17 @@
+<!-- Pour lier une valeur de la classe (propriété) vers notre HTML,
+on utilise soit les String Interpolation: -->
+<p>La valeur de la variable est <b> {{ monTexte }} </b></p>
+
+<!-- Soit le Property Binding dont on possède actuellement deux syntaxes: -->
+<!-- Ancienne syntaxe -->
+<img [src]="urlImage" alt=""> 
+<!-- Nouvelle syntaxe -->
+<img src="{{ urlImage }}" alt="">
+
+<!-- Pour provoquer nos méthodes de classe via les évènements du navigateur, on va utiliser l'Event Binding: -->
+<button (click)="sayHello()">Click me</button>
+
+<!-- Si l'on a besoin de récupérer l'évènement levé par le navigateur, on peut utiliser un paramètre '$event': -->
+<input type="text" (input)="logText($event)">
+
+<input type="text" [value]="firstname" (input)="changeFirstname($event)">

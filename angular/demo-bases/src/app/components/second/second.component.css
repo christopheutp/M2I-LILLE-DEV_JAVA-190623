@@ -1,0 +1,9 @@
+/* Pour cibler le composant en soi et ne pas crer des
+    éléments HTML superflus */
+:host {
+    display: flex;
+    background-color: red;
+    width: 800px;
+    height: 100px;
+    justify-content: space-between;
+}
