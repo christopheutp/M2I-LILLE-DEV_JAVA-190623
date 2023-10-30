@@ -1,0 +1,17 @@
+<form action="#" (submit)="submitFormHandler($event)">
+    <div>
+        <label for="firstname">Firstname:</label>
+        <input type="text" name="firstname" id="firstname" required [value]="firstname" (change)="changeFirstnameHandler($event)">
+    </div>
+    <div>
+        <label for="lastname">Lastname:</label>
+        <input type="text" name="lastname" id="lastname" required [value]="lastname" (change)="changeLastnameHandler($event)">
+    </div>
+    <div>
+        <label for="age">age:</label>
+        <input type="number" name="age" id="age" required [value]="age" (change)="changeAgeHandler($event)">
+    </div>
+    <div>
+        <button>Submit</button>
+    </div>
+</form>
