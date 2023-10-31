@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "exercice-03": {
+    "exercice-02": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/exercice-03",
+            "outputPath": "dist/exercice-02",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "exercice-03:build:production"
+              "browserTarget": "exercice-02:build:production"
             },
             "development": {
-              "browserTarget": "exercice-03:build:development"
+              "browserTarget": "exercice-02:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "exercice-03:build"
+            "browserTarget": "exercice-02:build"
           }
         },
         "test": {
