@@ -1,0 +1,27 @@
+<p *ngIf="contacts.length === 0; else elseblock">
+    Il n'y a pas de contacts !
+</p>
+<ng-template #elseblock>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Phone number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of contacts; let i = index;">
+                <td>{{ i + 1 }}</td>
+                <td>{{ c.firstname }}</td>
+                <td>{{ c.lastname }}</td>
+                <td>{{ c.email }}</td>
+                <td>{{ c.phoneNumber }}</td>
+                <td>N / A</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>

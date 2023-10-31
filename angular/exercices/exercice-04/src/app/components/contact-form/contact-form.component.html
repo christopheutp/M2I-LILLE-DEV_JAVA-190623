@@ -1,0 +1,21 @@
+<form action="#" (submit)="submitFormHandler($event)">
+    <div>
+        <label for="firstname">Firstname:</label>
+        <input type="text" id="firstname" name="firstname" required [(ngModel)]="newContact.firstname">
+    </div>
+    <div>
+        <label for="lastname">Lastname:</label>
+        <input type="text" id="lastname" name="lastname" required [(ngModel)]="newContact.lastname">
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required [(ngModel)]="newContact.email">
+    </div>
+    <div>
+        <label for="phoneNumber">Phone number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required [(ngModel)]="newContact.phoneNumber">
+    </div>
+    <div>
+        <button>Submit</button>
+    </div>
+</form>
