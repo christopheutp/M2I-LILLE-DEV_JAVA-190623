@@ -1,0 +1,14 @@
+
+<!-- <p>
+    La variable issue du parent est <b>{{ trucBidule }}</b>
+</p> -->
+<p>
+    La valeur de la variable de l'enfant est <b>{{ maVariable }}</b>
+</p>
+<hr>
+<input type="text" (input)="inputChanged($event)">
+<button (click)="doSmthInParent()">Do something in parent</button>
+<hr>
+<app-grand-child [demoGC]="trucBidule"></app-grand-child>
+<app-grand-child [demoGC]="'25'"></app-grand-child>
+<app-grand-child [demoGC]="'blabla'"></app-grand-child>

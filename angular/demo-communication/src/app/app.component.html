@@ -1,0 +1,6 @@
+<h1>Demo Communication</h1>
+<hr>
+<p>
+  La variable dans le parent est : <b>{{ variableParent }}</b>
+</p>
+<app-child [varA]="variableParent" (blabla)="changeVariable($event)"></app-child>
