@@ -1,0 +1,205 @@
+body, html {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        45deg,
+        red,
+        orange,
+        yellow
+    );
+
+    > main {
+        height: min(60%, 600px);
+        width: min(80%, 800px);
+        padding: 25px;
+        border-radius: 25px;
+        background-color: brown;
+        box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.4);
+        display: grid;
+        grid-template: 1fr / 2fr 8fr;
+        font-family: monospace;
+        color: white;
+
+        > div {
+            padding-inline: 2.5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        > div:first-child {
+            > form {
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-end;
+
+                & input {
+                    background-color: transparent;
+                    border: none;
+                    margin-top: 4px;
+                    border-radius: 5px;
+                    background-color: rgba(58, 58, 58, 0.8);
+                    font-family: monospace;
+                    font-size: 1.15rem;
+                    color: white;
+                    width: 100%;
+                    padding: 5px;
+                }
+
+                & input:focus {
+                    outline: none;
+                }
+
+                & button {
+                    background-color: rgb(80, 9, 9);
+                    border: none;
+                    border-radius: 10px;
+                    padding: 10px 15px;
+                    color: white;
+                    font-family: monospace;
+                    font-size: 0.6rem;
+                    transition: transform 200ms ease,
+                                background-color 200ms ease;
+                }
+
+                & button:not([disabled]):hover {
+                    cursor: pointer;
+                    background-color: rgb(102, 30, 30);
+                    transform: scale(1.05);
+                }
+
+                & button:disabled {
+                    background-color: gray;
+                }
+
+                & button:active {
+                    transform: scale(0.95);
+                }
+            }
+
+            > h1 {
+                margin: 0;
+            }
+
+            > hr {
+                width: 80%;
+            }
+        }
+
+        > div:last-child {
+            align-items: flex-end;
+            max-height: 580px;
+
+            ::-webkit-scrollbar {
+                display: none;
+            }
+
+            & select {
+                background-color: rgba(58, 58, 58, 0.8);
+                border: none;
+                border-radius: 5px;
+                text-align: end;
+                width: min-content;
+                padding: 5px 10px;
+                color: white;
+            }
+
+            & select:active, select:focus {
+                outline: none;
+            }
+
+            #result {
+                margin-top: 25px;
+                overflow-y: scroll;
+                height: 100%;
+                width: 100%;
+                color: black;
+                box-sizing: border-box;
+                padding: 15px;
+                border-radius: 5px;
+                background-color: rgb(209, 201, 177);
+
+                > div {
+                    padding: 10px;
+                    width: 90%;
+                    margin: 20px auto;
+                    height: 100px;
+                    background-color: rgba(0, 0, 0, 0.4);
+                    border-radius: 10px;
+                    display: grid;
+                    grid-template: repeat(3, 1fr) / 50px repeat(3, 1fr);
+                    box-shadow: 0 0 10px 5px rgba(165, 165, 137, 0.752);
+
+                    > span {
+                        display: flex;
+                        justify-content: center;
+                    }
+
+                    > span:first-child {
+                        grid-row: 1 / span 2;
+                        grid-column: 1;
+                        margin: auto;
+                        background-color: rgb(62, 62, 62);
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        color: white;
+                        font-weight: bold;
+                    }
+
+                    > span:nth-child(2) {
+                        grid-row: 1;
+                        grid-column: 2 / span 2;
+                    }
+
+                    > span:nth-child(3) {
+                        grid-row: 2;
+                        grid-column: 2 / span 2;
+                    }
+
+                    > span:nth-child(4) {
+                        grid-row: 3;
+                        grid-column: 2 / span 2;
+                    }
+
+                    > button {
+                        grid-row: 3;
+                        grid-column: 4;
+                        margin: auto 10px 10px auto;
+                        padding: 5px 10px;
+                        background-color: rgb(18, 18, 52);
+                        border: none;
+                        color: white;
+                        border-radius: 5px;
+                        font-size: 1rem;
+                        height: fit-content;
+                        font-family: monospace;
+                        transition: transform 200ms ease,
+                                    background-color 200ms ease;
+                    }
+
+                    > button:not([disabled]):hover {
+                        cursor: pointer;
+                        transform: scale(1.05);
+                        background-color: rgb(37, 37, 90);
+                    }
+
+                    > button:active {
+                        transform: scale(0.95);
+                    }
+                }
+            }
+        }
+    }
+}
+

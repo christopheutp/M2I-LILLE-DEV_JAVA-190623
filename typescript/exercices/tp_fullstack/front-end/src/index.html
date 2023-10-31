@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice B</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script type="module" src="./assets/js/main.mjs" defer></script>
+</head>
+<body>
+    <main>
+        <div>
+            <h1>eContacts</h1>
+            <hr>
+            <form action="#" id="submit-contact">
+                <input type="text" name="id" style="display: none;" readonly>
+                <div>
+                    <label for="firstname">Firstname:</label>
+                    <input type="text" name="firstname" id="firstname" required>
+                </div>
+                <div>
+                    <label for="lastname">Lastname:</label>
+                    <input type="text" name="lastname" id="lastname" required>
+                </div>
+                <div>
+                    <label for="birthDate">Birth date:</label>
+                    <input type="date" name="birthDate" id="birthDate" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div>
+                    <label for="phoneNumber">Phone number:</label>
+                    <input type="text" name="phoneNumber" id="phoneNumber" required>
+                </div>
+                <div>
+                    <button>Add a Contact</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <div>
+                <span>Filter by:</span>
+                <select name="sortType" id="sort-type">
+                    <option value="id">Id</option>
+                    <option value="firstname">Firstname</option>
+                    <option value="lastname">Lastname</option>
+                    <option value="email">Email</option>
+                    <option value="phoneNumber">Phone number</option>
+                </select>
+            </div>
+            <div id="result">
+                <!-- <div>
+                    <span>1</span>
+                    <span>John DUPONT</span>
+                    <span>10/11/1987</span>
+                    <span>j.dupont@email.com</span>
+                    <span>+33 123 456 789</span>
+                    <button>Delete</button>
+                </div> -->
+            </div>
+        </div>
+        
+    </main>
+</body>
+</html>

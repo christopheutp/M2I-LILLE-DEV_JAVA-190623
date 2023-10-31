@@ -1,0 +1,27 @@
+GET http://localhost:8080/api/v1/contacts
+
+###
+GET http://localhost:8080/api/v1/contacts/4ca96bc5-522e-4e89-b9b7-60a2a432f795
+
+###
+POST http://localhost:8080/api/v1/contacts
+Content-Type: application/json
+
+{
+  "firstname": "John",
+  "lastname": "DUPONT",
+  "email": "j.dupont@email.com",
+  "phoneNumber": "+33 123 456 789",
+  "birthDate": "1987-11-02"
+}
+
+###
+PATCH http://localhost:8080/api/v1/contacts/4ca96bc5-522e-4e89-b9b7-60a2a432f795
+Content-Type: application/json
+
+{
+  "lastname": "MARTEZ"
+}
+
+###
+DELETE http://localhost:8080/api/v1/contacts/4ca96bc5-522e-4e89-b9b7-60a2a432f795
