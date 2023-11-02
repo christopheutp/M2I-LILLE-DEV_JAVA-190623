@@ -1,0 +1,28 @@
+<h1>Demo projection Contenu</h1>
+<hr>
+<app-button (onClick)="clickAHandler()">
+  <span>Bouton A</span>
+</app-button>
+<app-button (onClick)="clickBHandler()">
+  <span>Bouton B</span>
+</app-button>
+<app-card>
+  <p>Ceci est un paragraphe</p>
+</app-card>
+<app-card>
+  <img src="http://random.imagecdn.app/200/200" alt="Random Pic">
+</app-card>
+<app-card>
+  <button>Button from parent</button>
+</app-card>
+
+<!-- Un modal 
+  <div *ngIf="modalVisible" class="background" (click)="closeModal()"> Elle doit faire toute la largeur et la hauteur de la page, être semi-transparente. Quand on clique dessus, ça doit la masquer
+    <div class="content">
+      <button (click)="closeModal()">Close</button>
+      <ng-content></ng-content>
+
+    </div>
+  </div>
+
+-->
