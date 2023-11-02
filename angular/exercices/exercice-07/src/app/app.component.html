@@ -1,0 +1,12 @@
+<h1>eKennel</h1>
+<hr>
+<select name="sortBy" id="sortBy" [(ngModel)]="sortingType">
+  <option value="">Select a sorting...</option>
+  <option value="id">Id</option>
+  <option value="name">Name</option>
+  <option value="breed">Breed</option>
+  <option value="age">Age</option>
+</select>
+<div>
+  <app-dog-card *ngFor="let d of dogs | dogSort: sortingType" [dog]="d"></app-dog-card>
+</div>
