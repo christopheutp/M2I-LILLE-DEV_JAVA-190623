@@ -1,0 +1,9 @@
+<h1>TrimPipe</h1>
+<hr>
+<ul>
+  <li *ngFor="let text of texts">{{ text | trimEnd }}</li>
+</ul>
+<hr>
+<ul>
+  <li *ngFor="let text of texts">{{ text | trimEnd:20 }}</li>
+</ul>
