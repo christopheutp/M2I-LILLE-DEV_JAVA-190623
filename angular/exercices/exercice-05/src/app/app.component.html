@@ -1,0 +1,4 @@
+<h1>eRepertoire</h1>
+<hr>
+<app-contact-form (addContact)="addContactHandler($event)"></app-contact-form>
+<app-contact-card *ngFor="let c of contacts" [contact]="c" (deleteContact)="deleteContactHandler($event)"></app-contact-card>

@@ -1,0 +1,5 @@
+<h3>{{ contact.firstname }} {{ contact.lastname }}</h3>
+<ul>
+    <li><b>Age: </b>{{ contact.age }}</li>
+</ul>
+<app-contact-delete-button [contact]="contact" (deleteContact)="deleteContactHandler($event)"></app-contact-delete-button>

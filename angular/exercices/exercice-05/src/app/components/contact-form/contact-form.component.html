@@ -1,0 +1,17 @@
+<form action="#">
+    <div>
+        <label for="firstname">Firstname:</label>
+        <input type="text" required id="firstname" name="firstname" [(ngModel)]="contact.firstname">
+    </div>
+    <div>
+        <label for="lastname">Lastname:</label>
+        <input type="text" required id="lastname" name="lastname" [(ngModel)]="contact.lastname">
+    </div>
+    <div>
+        <label for="age">Age:</label>
+        <input type="number" min="1" max="200" required id="age" name="age" [(ngModel)]="contact.age">
+    </div>
+    <div>
+        <button>Submit</button>
+    </div>
+</form>
