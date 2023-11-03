@@ -1,0 +1,22 @@
+<button (click)="changeModalVisilibty('image')">Show Image</button>
+<button (click)="changeModalVisilibty('text')">Show Text</button>
+<button (click)="changeModalVisilibty('form')">Show Form</button>
+<app-modal (close)="changeModalVisilibty('')" *ngIf="modalVisibility === 'text'">
+  <p>Du texte</p>
+  <!-- <img src="http://random.imagecdn.app/500/500" alt="Random pic"> -->
+</app-modal>
+<app-modal (close)="changeModalVisilibty('')" *ngIf="modalVisibility === 'image'">
+  <img src="http://random.imagecdn.app/500/500" alt="Random pic">
+</app-modal>
+<app-modal (close)="changeModalVisilibty('')" *ngIf="modalVisibility === 'form'">
+  <form action="#">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+    </div>
+  </form>
+</app-modal>

@@ -1,0 +1,14 @@
+<div class="background" (click)="onClose($event)">
+    <div class="content">
+        <div class="header">
+            <h3>Modal Title</h3>
+            <button (click)="onClose()">X</button>
+        </div>
+        <div class="body">
+            <ng-content></ng-content>
+        </div>
+        <div class="footer">
+            <button (click)="onClose()">Close</button>
+        </div>
+    </div>
+</div>
