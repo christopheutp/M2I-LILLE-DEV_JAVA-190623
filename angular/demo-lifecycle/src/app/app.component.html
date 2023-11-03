@@ -1,0 +1,7 @@
+<input type="text" #monInput [value]="monTexte">
+<button (click)="changeTextValue(monInput)">Change text</button>
+<hr>
+<button (click)="switchFirstVisibility()">Toggle FirstComponent</button>
+<app-first *ngIf="firstVisible" [text]="monTexte">
+  <input type="number" #age value="12">
+</app-first>
