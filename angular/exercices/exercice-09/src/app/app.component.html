@@ -1,0 +1,2 @@
+<app-timer-form (addTimer)="addTimerHandler($event)"></app-timer-form>
+<app-timer-display *ngFor="let time of timers; let i = index" [defaultValue]="time" (deleteTimer)="deleteTimerHandler(i)"></app-timer-display>

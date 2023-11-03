@@ -1,0 +1,7 @@
+<div>
+    <div [ngStyle]="{width: (100 - currentTime / defaultValue * 100) + '%', backgroundColor: (100 - currentTime / defaultValue * 100) >= 66 ? 'red' : (100 - currentTime / defaultValue * 100) >= 33 ? 'yellow' : 'green'}"></div>
+    <span *ngIf="currentTime > 0; else elseblock">{{ currentTime | secondsToText }}</span>
+    <ng-template #elseblock>
+        <button (click)="clickHandler()">Fait</button>
+    </ng-template>
+</div>

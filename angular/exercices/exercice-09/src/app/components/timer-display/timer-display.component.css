@@ -1,0 +1,21 @@
+div {
+    height: 80px;
+    width: 400px;
+    background-color: rgba(255, 0, 0, 0.361);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    > div {
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        left: 0;
+        width: 0%;
+        background-color: red;
+        transition:  width 1s linear,
+                background-color 1s linear;
+    }
+}
