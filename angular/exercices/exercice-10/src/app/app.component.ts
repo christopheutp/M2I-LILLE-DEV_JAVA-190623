@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'exercice-10';
+  displayVisible = false
+
+  switchVisibility() {
+    this.displayVisible = !this.displayVisible
+  }
 }
