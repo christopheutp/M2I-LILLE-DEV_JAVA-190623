@@ -1,0 +1,14 @@
+<div class="background" (click)="clickHandler($event)">
+    <div class="content">
+        <div class="header">
+            <h3>Modal Title</h3>
+            <button (click)="clickHandler()">X</button>
+        </div>
+        <div class="body">
+            <ng-content></ng-content>
+        </div>
+        <div class="footer">
+            <button (click)="clickHandler()">Close</button>
+        </div>
+    </div>
+</div>

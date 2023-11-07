@@ -1,0 +1,4 @@
+<app-modal *ngIf="dogFormMode" (close)="closeModalHandler()">
+  <app-dog-form></app-dog-form>
+</app-modal>
+<button (click)="clickHandler()">Add new Dog</button>
