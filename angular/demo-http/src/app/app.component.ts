@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs'
 
 interface Pokemon {
@@ -60,9 +60,18 @@ export class AppComponent {
       id: 22,
       title: "Mon Title",
       body: "Mon Body"
-    }).subscribe(result => {
-      console.log(result);
-      localStorage.setItem('jwt', result.title)
+    },{
+      params: new HttpParams()
+      .set('limit', 20)
+    }).subscribe({
+      next: result => {
+        console.log(result);
+        localStorage.setItem('jwt', result.title)
+      },
+      error: error => {
+        console.error(error);
+        
+      }
     })
   }
 
