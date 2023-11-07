@@ -87,4 +87,10 @@ export class AppComponent {
 
     return token
   }
+
+  removeToken() {
+    localStorage.removeItem('jwtToken')
+    localStorage.removeItem('monChien')
+    localStorage.removeItem('jwt')
+  }
 }
