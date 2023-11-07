@@ -1,4 +1,12 @@
 <app-modal *ngIf="dogFormMode" (close)="closeModalHandler()">
   <app-dog-form></app-dog-form>
 </app-modal>
+<p *ngIf="dogs.length === 0; else elseblock">
+  There is no dog in the database!
+</p>
+<ng-template #elseblock>
+  <div>
+    <app-dog-display *ngFor="let dog of dogs" [dogId]="dog.id"></app-dog-display>
+  </div>
+</ng-template>
 <button (click)="clickHandler()">Add new Dog</button>
