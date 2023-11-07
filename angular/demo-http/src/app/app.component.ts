@@ -86,6 +86,17 @@ export class AppComponent {
     localStorage.setItem('monChien', JSON.stringify(monChien))
   }
 
+  getPokemon(value: string | number) {
+    return this.http.get<Pokemon>("https://pokeapi.co/api/v2/pokemon/" + value, {
+      headers: new HttpHeaders()
+      .set('Authorization', `Bearer ${this.getToken()}`)
+    })
+  }
+
+  logPokemon(value: string | number) {
+    this.getPokemon(value).subscribe(pokemon => console.log(pokemon));
+  }
+
   getToken() {
     const token = localStorage.getItem('jwtToken')
     const leChien = localStorage.getItem('monChien') ?? "{}"
