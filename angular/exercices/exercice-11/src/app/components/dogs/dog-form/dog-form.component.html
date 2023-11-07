@@ -1,1 +1,28 @@
-<p>dog-form works!</p>
+<form action="#" (submit)="submitFormHandler($event)">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text"
+        #name
+        [required]="getRequired()"
+        [readOnly]="getReadOnly()">
+    </div>
+    <div>
+        <label for="breed">Breed:</label>
+        <input type="text"
+        #breed
+        [required]="getRequired()"
+        [readOnly]="getReadOnly()">
+    </div>
+    <div>
+        <label for="birthDate">Birth date:</label>
+        <input type="date"
+        #birthDate
+        [required]="getRequired()"
+        [readOnly]="getReadOnly()">
+    </div>
+    <div>
+        <button>
+            {{ getButtonText() }}
+        </button>
+    </div>
+</form>

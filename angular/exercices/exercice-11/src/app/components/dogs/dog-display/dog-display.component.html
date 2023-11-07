@@ -1,1 +1,9 @@
-<p>dog-display works!</p>
+<h3>{{ dog ? dog.name : 'Unknown name' }}</h3>
+<ul>
+    <li><b>Breed: </b>{{ dog ? dog.breed : 'Unknown breed' }}</li>
+    <li><b>Birth date: </b>{{ dog ? (dog.birthDate | date:'dd/MM/yyyy') : 'dd/MM/yyyy' }}</li>
+</ul>
+<div>
+    <button (click)="clickHandler('edit')">Edit</button>
+    <button (click)="clickHandler('delete')">Delete</button>
+</div>

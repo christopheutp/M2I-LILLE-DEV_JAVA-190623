@@ -29,10 +29,20 @@ class DogService {
   addDog(newDog: Dog) {
     const currentDogs = this.dogs$.getValue()
     this.dogs$.next([...currentDogs, newDog])
+    console.log(this.dogs$.getValue());
+    
   }
 
   getDogById(dogId: string) {
-    return this.dogs$.getValue().find(d => d.id === dogId) ?? null
+    console.log("DogId: " + dogId);
+    
+
+    const foundDog = this.dogs$.getValue().find(d => d.id === dogId) ?? null
+    console.log('Found dog:');
+    
+    console.log(foundDog);
+    
+    return foundDog
   }
 
   deleteDogById(dogId: string) {
