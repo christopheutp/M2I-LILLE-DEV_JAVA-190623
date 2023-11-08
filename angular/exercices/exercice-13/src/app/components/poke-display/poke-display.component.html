@@ -1,0 +1,3 @@
+<button (click)="prevPokemon()" [disabled]="currentPokemon && currentPokemon.id <= 0">&lt;&lt;</button>
+<p>{{ currentPokemon | json }}</p>
+<button (click)="nextPokemon()" [disabled]="currentPokemon && currentPokemon.id >= 1017">&gt;&gt;</button>

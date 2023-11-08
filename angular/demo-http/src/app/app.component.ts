@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { map } from 'rxjs'
+import { catchError, map } from 'rxjs'
 
 interface Pokemon {
   name: string,
@@ -94,7 +94,8 @@ export class AppComponent {
   }
 
   logPokemon(value: string | number) {
-    this.getPokemon(value).subscribe(pokemon => console.log(pokemon));
+    this.getPokemon(value)
+    .subscribe(pokemon => console.log(pokemon));
   }
 
   getToken() {

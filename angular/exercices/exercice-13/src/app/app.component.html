@@ -1,0 +1,14 @@
+<h1>PokeAPI Angular</h1>
+<hr>
+<div>
+  <form action="#" (submit)="submitHandler($event)">
+    <div>
+      <label for="searchInput">Name or Id: </label>
+      <input type="text" required #pokeNameOrIdRef>
+    </div>
+    <div>
+      <button>Search</button>
+    </div>
+  </form>
+</div>
+<app-poke-display [pokeNameOrId]="pokeNameOrId"></app-poke-display>
