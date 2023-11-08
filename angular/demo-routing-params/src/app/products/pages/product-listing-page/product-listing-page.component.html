@@ -1,0 +1,26 @@
+<h3>Product List</h3>
+<hr>
+<p *ngIf="products.length === 0; else elseblock">
+    Pas de produits !
+</p>
+<ng-template #elseblock>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prod of products">
+                <td>{{ prod.id }}</td>
+                <td>{{ prod.name }}</td>
+                <!-- <td><a [routerLink]="['/products', prod.id]"><button>Details</button></a></td> -->
+                <td><a [routerLink]="[prod.id]"><button>Details</button></a></td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>
+<hr>
+<button (click)="addProduct()">Add a product</button>
