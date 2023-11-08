@@ -1,0 +1,45 @@
+nav {
+    width: 60%;
+    margin: auto;
+    & ul {
+        list-style: none;
+        padding: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        > li > a {
+            font-family: monospace;
+            font-size: 1.4rem;
+            color: black;
+            text-decoration: none;
+            transition: color 200ms ease,
+                        transform 200ms ease;
+            position: relative;
+        }
+
+        > li > a.active {
+            color: orange;
+        }
+
+        > li > a:hover {
+            transform: scale(1.05);
+            color: orange;
+        }
+
+        > li > a::after {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            content: "";
+            width: 0%;
+            border-top: 1px solid orange;
+            transition: width 200ms ease;
+        }
+
+        > li > a:hover::after, > li > a.active::after {
+            width: 100%;
+        }
+    }
+}
