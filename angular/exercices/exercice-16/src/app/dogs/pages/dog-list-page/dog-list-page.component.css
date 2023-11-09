@@ -1,0 +1,29 @@
+:host {
+    display: grid !important;
+    grid-template: 1fr / 2fr 8fr;
+    gap: 2vw;
+
+    > div:first-child {
+        text-align: center;
+
+        & .listing  {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 10px;
+
+            > span {
+                padding: 5px 10px;
+                background-color: rgb(205, 165, 92);
+                border-radius: 10px;
+                height: 40px;
+                box-sizing: border-box;
+            }
+
+            > span.selected-dog {
+                background-color: rgb(205, 96, 92);
+            }
+        }
+    }
+}

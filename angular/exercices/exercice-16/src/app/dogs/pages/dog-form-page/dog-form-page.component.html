@@ -1,0 +1,17 @@
+<form action="#" #f="ngForm" (ngSubmit)="submitForm(f)">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" [(ngModel)]="dog.name" [required]="isRequired" [readOnly]="isReadOnly">
+    </div>
+    <div>
+        <label for="breed">Breed:</label>
+        <input type="text" name="breed" [(ngModel)]="dog.breed" [required]="isRequired" [readOnly]="isReadOnly">
+    </div>
+    <div>
+        <label for="birthDate">Birth date:</label>
+        <input type="date" name="birthDate" [ngModel]="dog.birthDate | date:'yyyy-MM-dd'" (ngModelChange)="dog.birthDate = $event" [required]="isRequired" [readOnly]="isReadOnly">
+    </div>
+    <div>
+        <button>{{ buttonText }}</button>
+    </div>
+</form>

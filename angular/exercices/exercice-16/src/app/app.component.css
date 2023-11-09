@@ -1,0 +1,64 @@
+:host {
+    & header {
+        margin-block: 3vh;
+
+        & ul {
+            width: 60%;
+            margin: auto;
+            list-style: none;
+            padding: 0;
+    
+            display: flex;
+            justify-content: space-around;
+            align-items: baseline;
+        
+            > li > a {
+                font-family: monospace;
+                font-size: 1.5rem;
+                text-decoration: none;
+                color: hsl(0, 0%, 20%);
+                transition: color 200ms ease, 
+                            transform 200ms ease;
+                position: relative;
+            }
+        
+            > li > a::after {
+                content: "";
+                position: absolute;
+                border-bottom: 1px solid black;
+                left: 0;
+                bottom: 0;
+                width: 0%;
+                transition: width 200ms ease,
+                            border-color 200ms ease;
+            }
+
+            > li > a.active {
+                color: orange;
+            }
+        
+            > li > a.active::after {
+                border-color: orange;
+                width: 100%;
+            }
+        
+            > li > a:hover {
+                color: rgb(255, 191, 0);
+                transform: scale(1.05);
+            }
+        
+            > li > a:hover::after {
+                border-color: rgb(255, 191, 0);
+                width: 100%;
+            }
+        
+           
+        }
+    }
+
+    & router-outlet + * {
+        display: block;
+        margin: auto;
+        width: 60%;
+    }
+}

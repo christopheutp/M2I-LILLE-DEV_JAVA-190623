@@ -1,0 +1,14 @@
+<div>
+    <h3>Dogs List</h3>
+    <hr>
+    <p *ngIf="dogs.length === 0; else elseblock">There is no dog in the database!</p>
+    <ng-template #elseblock>
+        <input type="text" #searchInputRef (input)="debounceSearch(searchInputRef.value)">
+        <div class="listing">
+            <span *ngFor="let d of dogs | searchDog:searchInput" [ngClass]="{'selected-dog': selectedDog?.id === d.id}" (click)="changeSelectedDog(d.id)">{{ d.name }}</span>
+        </div>
+    </ng-template>
+</div>
+<div>
+    <router-outlet></router-outlet>
+</div>
